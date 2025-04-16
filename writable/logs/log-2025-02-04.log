@@ -1,0 +1,193 @@
+CRITICAL - 2025-02-04 05:27:13 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<iframe src="
+[Method: GET, Route: %3Ciframe%20src=]
+in SYSTEMPATH\Router\Router.php on line 737.
+ 1 SYSTEMPATH\Router\Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars('<iframe src=')
+ 2 SYSTEMPATH\CodeIgniter.php(834): CodeIgniter\Router\Router->handle('<iframe src=')
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Project\\web\\public\\index.php')
+CRITICAL - 2025-02-04 07:47:59 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "profile/SejarahView.php"
+[Method: GET, Route: profil/sejarah]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('profile/SejarahView.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('profile/SejarahView', [], true)
+ 3 APPPATH\Controllers\ProfileController.php(11): view('profile/SejarahView')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProfileController->sejarah()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProfileController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Project\\web\\public\\index.php')
+CRITICAL - 2025-02-04 07:48:01 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "profile/SejarahView.php"
+[Method: GET, Route: profil/sejarah]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('profile/SejarahView.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('profile/SejarahView', [], true)
+ 3 APPPATH\Controllers\ProfileController.php(11): view('profile/SejarahView')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProfileController->sejarah()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProfileController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Project\\web\\public\\index.php')
+CRITICAL - 2025-02-04 07:48:01 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "profile/SejarahView.php"
+[Method: GET, Route: profil/sejarah]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('profile/SejarahView.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('profile/SejarahView', [], true)
+ 3 APPPATH\Controllers\ProfileController.php(11): view('profile/SejarahView')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProfileController->sejarah()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProfileController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Project\\web\\public\\index.php')
+CRITICAL - 2025-02-04 07:48:02 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "profile/SejarahView.php"
+[Method: GET, Route: profil/sejarah]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('profile/SejarahView.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('profile/SejarahView', [], true)
+ 3 APPPATH\Controllers\ProfileController.php(11): view('profile/SejarahView')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProfileController->sejarah()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProfileController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Project\\web\\public\\index.php')
+CRITICAL - 2025-02-04 07:48:02 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "profile/SejarahView.php"
+[Method: GET, Route: profil/sejarah]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('profile/SejarahView.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('profile/SejarahView', [], true)
+ 3 APPPATH\Controllers\ProfileController.php(11): view('profile/SejarahView')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProfileController->sejarah()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProfileController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Project\\web\\public\\index.php')
+CRITICAL - 2025-02-04 07:48:03 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "profile/SejarahView.php"
+[Method: GET, Route: profil/sejarah]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('profile/SejarahView.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('profile/SejarahView', [], true)
+ 3 APPPATH\Controllers\ProfileController.php(11): view('profile/SejarahView')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProfileController->sejarah()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProfileController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Project\\web\\public\\index.php')
+CRITICAL - 2025-02-04 07:48:03 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "profile/SejarahView.php"
+[Method: GET, Route: profil/sejarah]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('profile/SejarahView.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('profile/SejarahView', [], true)
+ 3 APPPATH\Controllers\ProfileController.php(11): view('profile/SejarahView')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProfileController->sejarah()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProfileController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Project\\web\\public\\index.php')
+CRITICAL - 2025-02-04 07:48:04 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "profile/SejarahView.php"
+[Method: GET, Route: profil/sejarah]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('profile/SejarahView.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('profile/SejarahView', [], true)
+ 3 APPPATH\Controllers\ProfileController.php(11): view('profile/SejarahView')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProfileController->sejarah()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProfileController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Project\\web\\public\\index.php')
+CRITICAL - 2025-02-04 07:48:06 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "profile/SejarahView.php"
+[Method: GET, Route: profil/sejarah]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('profile/SejarahView.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('profile/SejarahView', [], true)
+ 3 APPPATH\Controllers\ProfileController.php(11): view('profile/SejarahView')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProfileController->sejarah()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProfileController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Project\\web\\public\\index.php')
+CRITICAL - 2025-02-04 07:48:28 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "profile/SejarahView.php"
+[Method: GET, Route: profil/sejarah]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('profile/SejarahView.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('profile/SejarahView', [], true)
+ 3 APPPATH\Controllers\ProfileController.php(11): view('profile/SejarahView')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProfileController->sejarah()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProfileController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Project\\web\\public\\index.php')
+CRITICAL - 2025-02-04 07:48:29 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "profile/SejarahView.php"
+[Method: GET, Route: profil/sejarah]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('profile/SejarahView.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('profile/SejarahView', [], true)
+ 3 APPPATH\Controllers\ProfileController.php(11): view('profile/SejarahView')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProfileController->sejarah()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProfileController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Project\\web\\public\\index.php')
+CRITICAL - 2025-02-04 07:48:48 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "profile/SejarahView.php"
+[Method: GET, Route: profil/sejarah]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('profile/SejarahView.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('profile/SejarahView', [], true)
+ 3 APPPATH\Controllers\ProfileController.php(11): view('profile/SejarahView')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProfileController->sejarah()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProfileController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Project\\web\\public\\index.php')
+CRITICAL - 2025-02-04 07:49:28 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "profile/SejarahView.php"
+[Method: GET, Route: profil/sejarah]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('profile/SejarahView.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('profile/SejarahView', [], true)
+ 3 APPPATH\Controllers\ProfileController.php(15): view('profile/SejarahView')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProfileController->sejarah()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProfileController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Project\\web\\public\\index.php')
+CRITICAL - 2025-02-04 07:49:28 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "profile/SejarahView.php"
+[Method: GET, Route: profil/sejarah]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('profile/SejarahView.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('profile/SejarahView', [], true)
+ 3 APPPATH\Controllers\ProfileController.php(15): view('profile/SejarahView')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProfileController->sejarah()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProfileController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\Project\\web\\public\\index.php')

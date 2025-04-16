@@ -1,0 +1,100 @@
+DEBUG - 2025-04-03 10:53:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-04-03 10:53:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-04-03 10:53:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-04-03 10:53:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-04-03 10:54:32 --> ErrorException: Undefined variable $berita
+[Method: GET, Route: panel/list-user]
+in APPPATH\Views\admin\user\ListUserView.php on line 82.
+ 1 APPPATH\Views\admin\user\ListUserView.php(82): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $berita', 'C:\\Users\\Yudha Prastya\\Downloads\\WEB\\app\\Views\\admin\\user\\ListUserView.php', 82)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\Users\\Yudha Prastya\\Downloads\\WEB\\app\\Views\\admin\\user\\ListUserView.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/user/ListUserView', [], true)
+ 5 APPPATH\Controllers\Admin\UserController.php(25): view('admin/user/ListUserView', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\UserController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Yudha Prastya\\Downloads\\WEB\\public\\index.php')
+CRITICAL - 2025-04-03 10:55:00 --> ErrorException: Undefined variable $berita
+[Method: GET, Route: panel/list-user]
+in APPPATH\Views\admin\user\ListUserView.php on line 82.
+ 1 APPPATH\Views\admin\user\ListUserView.php(82): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $berita', 'C:\\Users\\Yudha Prastya\\Downloads\\WEB\\app\\Views\\admin\\user\\ListUserView.php', 82)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\Users\\Yudha Prastya\\Downloads\\WEB\\app\\Views\\admin\\user\\ListUserView.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/user/ListUserView', [], true)
+ 5 APPPATH\Controllers\Admin\UserController.php(25): view('admin/user/ListUserView', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\UserController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Yudha Prastya\\Downloads\\WEB\\public\\index.php')
+CRITICAL - 2025-04-03 10:55:06 --> ErrorException: Undefined variable $berita
+[Method: GET, Route: panel/list-user]
+in APPPATH\Views\admin\user\ListUserView.php on line 94.
+ 1 APPPATH\Views\admin\user\ListUserView.php(94): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $berita', 'C:\\Users\\Yudha Prastya\\Downloads\\WEB\\app\\Views\\admin\\user\\ListUserView.php', 94)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\Users\\Yudha Prastya\\Downloads\\WEB\\app\\Views\\admin\\user\\ListUserView.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/user/ListUserView', [], true)
+ 5 APPPATH\Controllers\Admin\UserController.php(25): view('admin/user/ListUserView', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\UserController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Yudha Prastya\\Downloads\\WEB\\public\\index.php')
+CRITICAL - 2025-04-03 10:55:07 --> ErrorException: Undefined variable $berita
+[Method: GET, Route: panel/list-user]
+in APPPATH\Views\admin\user\ListUserView.php on line 94.
+ 1 APPPATH\Views\admin\user\ListUserView.php(94): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $berita', 'C:\\Users\\Yudha Prastya\\Downloads\\WEB\\app\\Views\\admin\\user\\ListUserView.php', 94)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\Users\\Yudha Prastya\\Downloads\\WEB\\app\\Views\\admin\\user\\ListUserView.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/user/ListUserView', [], true)
+ 5 APPPATH\Controllers\Admin\UserController.php(25): view('admin/user/ListUserView', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\UserController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Yudha Prastya\\Downloads\\WEB\\public\\index.php')
+DEBUG - 2025-04-03 10:55:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-04-03 11:03:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-04-03 11:03:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-04-03 11:31:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-04-03 20:24:39 --> mysqli_sql_exception: Table 'knsalati_webknsalatiga.roles' doesn't exist in C:\Users\Yudha Prastya\Downloads\WEB\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\Users\Yudha Prastya\Downloads\WEB\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\Users\Yudha Prastya\Downloads\WEB\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\Users\Yudha Prastya\Downloads\WEB\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\Users\Yudha Prastya\Downloads\WEB\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\Yudha Prastya\Downloads\WEB\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\Yudha Prastya\Downloads\WEB\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\Yudha Prastya\Downloads\WEB\app\Controllers\Admin\UserController.php(26): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\Yudha Prastya\Downloads\WEB\system\CodeIgniter.php(933): App\Controllers\Admin\UserController->index()
+#8 C:\Users\Yudha Prastya\Downloads\WEB\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\UserController))
+#9 C:\Users\Yudha Prastya\Downloads\WEB\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\Yudha Prastya\Downloads\WEB\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\Yudha Prastya\Downloads\WEB\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\Users\Yudha Prastya\Downloads\WEB\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\Users\Yudha Prastya\Downloads\WEB\system\rewrite.php(44): require_once('C:\\Users\\Yudha ...')
+#14 {main}
+CRITICAL - 2025-04-03 20:24:39 --> Error: Call to a member function getResult() on bool
+[Method: GET, Route: panel/list-user]
+in SYSTEMPATH\Model.php on line 287.
+ 1 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 2 APPPATH\Controllers\Admin\UserController.php(26): CodeIgniter\BaseModel->findAll()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\UserController->index()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\UserController))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Yudha Prastya\\Downloads\\WEB\\public\\index.php')
+DEBUG - 2025-04-03 20:27:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-04-03 20:30:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-04-03 20:32:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

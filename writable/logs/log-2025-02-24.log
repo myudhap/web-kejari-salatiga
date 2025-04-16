@@ -1,0 +1,269 @@
+DEBUG - 2025-02-24 04:52:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 04:52:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 05:07:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 05:07:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-02-24 05:07:54 --> TypeError: CodeIgniter\BaseModel::replace(): Argument #1 ($row) must be of type ?array, int given, called in C:\Users\Yudha Prastya\Downloads\WEB\app\Controllers\Main\BeritaController.php on line 38
+[Method: GET, Route: berita/1]
+in SYSTEMPATH\BaseModel.php on line 1222.
+ 1 APPPATH\Controllers\Main\BeritaController.php(38): CodeIgniter\BaseModel->replace(2)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Main\BeritaController->detail('1')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main\BeritaController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Yudha Prastya\\Downloads\\WEB\\public\\index.php')
+DEBUG - 2025-02-24 05:07:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 05:07:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 05:08:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 05:08:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 05:08:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 05:08:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-02-24 05:08:21 --> mysqli_sql_exception: Unknown column 'username' in 'field list' in C:\Users\Yudha Prastya\Downloads\WEB\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\Users\Yudha Prastya\Downloads\WEB\system\Database\MySQLi\Connection.php(312): mysqli->query('REPLACE INTO `b...', 0)
+#1 C:\Users\Yudha Prastya\Downloads\WEB\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('REPLACE INTO `b...')
+#2 C:\Users\Yudha Prastya\Downloads\WEB\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('REPLACE INTO `b...')
+#3 C:\Users\Yudha Prastya\Downloads\WEB\system\Database\BaseBuilder.php(2430): CodeIgniter\Database\BaseConnection->query('REPLACE INTO `b...', Array, false)
+#4 C:\Users\Yudha Prastya\Downloads\WEB\system\Model.php(562): CodeIgniter\Database\BaseBuilder->replace(Array)
+#5 C:\Users\Yudha Prastya\Downloads\WEB\system\BaseModel.php(1231): CodeIgniter\Model->doReplace(Array, false)
+#6 C:\Users\Yudha Prastya\Downloads\WEB\app\Controllers\Main\BeritaController.php(38): CodeIgniter\BaseModel->replace(Array)
+#7 C:\Users\Yudha Prastya\Downloads\WEB\system\CodeIgniter.php(933): App\Controllers\Main\BeritaController->detail('1')
+#8 C:\Users\Yudha Prastya\Downloads\WEB\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main\BeritaController))
+#9 C:\Users\Yudha Prastya\Downloads\WEB\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\Yudha Prastya\Downloads\WEB\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\Yudha Prastya\Downloads\WEB\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\Users\Yudha Prastya\Downloads\WEB\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\Users\Yudha Prastya\Downloads\WEB\system\rewrite.php(44): require_once('C:\\Users\\Yudha ...')
+#14 {main}
+DEBUG - 2025-02-24 05:08:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 05:08:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 05:08:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 05:08:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-02-24 05:08:32 --> mysqli_sql_exception: Unknown column 'username' in 'field list' in C:\Users\Yudha Prastya\Downloads\WEB\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\Users\Yudha Prastya\Downloads\WEB\system\Database\MySQLi\Connection.php(312): mysqli->query('REPLACE INTO `b...', 0)
+#1 C:\Users\Yudha Prastya\Downloads\WEB\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('REPLACE INTO `b...')
+#2 C:\Users\Yudha Prastya\Downloads\WEB\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('REPLACE INTO `b...')
+#3 C:\Users\Yudha Prastya\Downloads\WEB\system\Database\BaseBuilder.php(2430): CodeIgniter\Database\BaseConnection->query('REPLACE INTO `b...', Array, false)
+#4 C:\Users\Yudha Prastya\Downloads\WEB\system\Model.php(562): CodeIgniter\Database\BaseBuilder->replace(Array)
+#5 C:\Users\Yudha Prastya\Downloads\WEB\system\BaseModel.php(1231): CodeIgniter\Model->doReplace(Array, false)
+#6 C:\Users\Yudha Prastya\Downloads\WEB\app\Controllers\Main\BeritaController.php(38): CodeIgniter\BaseModel->replace(Array)
+#7 C:\Users\Yudha Prastya\Downloads\WEB\system\CodeIgniter.php(933): App\Controllers\Main\BeritaController->detail('1')
+#8 C:\Users\Yudha Prastya\Downloads\WEB\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main\BeritaController))
+#9 C:\Users\Yudha Prastya\Downloads\WEB\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\Yudha Prastya\Downloads\WEB\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\Yudha Prastya\Downloads\WEB\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\Users\Yudha Prastya\Downloads\WEB\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\Users\Yudha Prastya\Downloads\WEB\system\rewrite.php(44): require_once('C:\\Users\\Yudha ...')
+#14 {main}
+DEBUG - 2025-02-24 05:08:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 05:08:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-02-24 05:10:00 --> mysqli_sql_exception: Unknown column 'username' in 'field list' in C:\Users\Yudha Prastya\Downloads\WEB\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\Users\Yudha Prastya\Downloads\WEB\system\Database\MySQLi\Connection.php(312): mysqli->query('REPLACE INTO `b...', 0)
+#1 C:\Users\Yudha Prastya\Downloads\WEB\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('REPLACE INTO `b...')
+#2 C:\Users\Yudha Prastya\Downloads\WEB\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('REPLACE INTO `b...')
+#3 C:\Users\Yudha Prastya\Downloads\WEB\system\Database\BaseBuilder.php(2430): CodeIgniter\Database\BaseConnection->query('REPLACE INTO `b...', Array, false)
+#4 C:\Users\Yudha Prastya\Downloads\WEB\system\Model.php(562): CodeIgniter\Database\BaseBuilder->replace(Array)
+#5 C:\Users\Yudha Prastya\Downloads\WEB\system\BaseModel.php(1231): CodeIgniter\Model->doReplace(Array, false)
+#6 C:\Users\Yudha Prastya\Downloads\WEB\app\Controllers\Main\BeritaController.php(42): CodeIgniter\BaseModel->replace(Array)
+#7 C:\Users\Yudha Prastya\Downloads\WEB\system\CodeIgniter.php(933): App\Controllers\Main\BeritaController->detail('1')
+#8 C:\Users\Yudha Prastya\Downloads\WEB\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main\BeritaController))
+#9 C:\Users\Yudha Prastya\Downloads\WEB\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\Yudha Prastya\Downloads\WEB\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\Yudha Prastya\Downloads\WEB\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\Users\Yudha Prastya\Downloads\WEB\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\Users\Yudha Prastya\Downloads\WEB\system\rewrite.php(44): require_once('C:\\Users\\Yudha ...')
+#14 {main}
+DEBUG - 2025-02-24 05:10:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 05:10:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 05:10:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 05:10:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-02-24 05:10:10 --> mysqli_sql_exception: Unknown column 'username' in 'field list' in C:\Users\Yudha Prastya\Downloads\WEB\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\Users\Yudha Prastya\Downloads\WEB\system\Database\MySQLi\Connection.php(312): mysqli->query('REPLACE INTO `b...', 0)
+#1 C:\Users\Yudha Prastya\Downloads\WEB\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('REPLACE INTO `b...')
+#2 C:\Users\Yudha Prastya\Downloads\WEB\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('REPLACE INTO `b...')
+#3 C:\Users\Yudha Prastya\Downloads\WEB\system\Database\BaseBuilder.php(2430): CodeIgniter\Database\BaseConnection->query('REPLACE INTO `b...', Array, false)
+#4 C:\Users\Yudha Prastya\Downloads\WEB\system\Model.php(562): CodeIgniter\Database\BaseBuilder->replace(Array)
+#5 C:\Users\Yudha Prastya\Downloads\WEB\system\BaseModel.php(1231): CodeIgniter\Model->doReplace(Array, false)
+#6 C:\Users\Yudha Prastya\Downloads\WEB\app\Controllers\Main\BeritaController.php(42): CodeIgniter\BaseModel->replace(Array)
+#7 C:\Users\Yudha Prastya\Downloads\WEB\system\CodeIgniter.php(933): App\Controllers\Main\BeritaController->detail('1')
+#8 C:\Users\Yudha Prastya\Downloads\WEB\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main\BeritaController))
+#9 C:\Users\Yudha Prastya\Downloads\WEB\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\Yudha Prastya\Downloads\WEB\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\Yudha Prastya\Downloads\WEB\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\Users\Yudha Prastya\Downloads\WEB\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\Users\Yudha Prastya\Downloads\WEB\system\rewrite.php(44): require_once('C:\\Users\\Yudha ...')
+#14 {main}
+DEBUG - 2025-02-24 05:10:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 05:10:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 05:10:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 05:10:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 05:10:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 05:10:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 05:10:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 05:10:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-02-24 05:12:38 --> ErrorException: Trying to access array offset on value of type null
+[Method: GET, Route: berita/2]
+in APPPATH\Controllers\Main\BeritaController.php on line 34.
+ 1 APPPATH\Controllers\Main\BeritaController.php(34): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\Users\\Yudha Prastya\\Downloads\\WEB\\app\\Controllers\\Main\\BeritaController.php', 34)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Main\BeritaController->detail('2')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main\BeritaController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Yudha Prastya\\Downloads\\WEB\\public\\index.php')
+DEBUG - 2025-02-24 05:14:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 05:15:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-02-24 05:15:06 --> ErrorException: Undefined array key "name"
+[Method: GET, Route: berita/2]
+in APPPATH\Views\main\berita\beritaDetailView.php on line 36.
+ 1 APPPATH\Views\main\berita\beritaDetailView.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name"', 'C:\\Users\\Yudha Prastya\\Downloads\\WEB\\app\\Views\\main\\berita\\beritaDetailView.php', 36)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\Users\\Yudha Prastya\\Downloads\\WEB\\app\\Views\\main\\berita\\beritaDetailView.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('main/berita/beritaDetailView', [], true)
+ 5 APPPATH\Controllers\Main\BeritaController.php(46): view('main/berita/beritaDetailView', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Main\BeritaController->detail('2')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main\BeritaController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Yudha Prastya\\Downloads\\WEB\\public\\index.php')
+CRITICAL - 2025-02-24 05:15:07 --> ErrorException: Undefined array key "name"
+[Method: GET, Route: berita/2]
+in APPPATH\Views\main\berita\beritaDetailView.php on line 36.
+ 1 APPPATH\Views\main\berita\beritaDetailView.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name"', 'C:\\Users\\Yudha Prastya\\Downloads\\WEB\\app\\Views\\main\\berita\\beritaDetailView.php', 36)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\Users\\Yudha Prastya\\Downloads\\WEB\\app\\Views\\main\\berita\\beritaDetailView.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('main/berita/beritaDetailView', [], true)
+ 5 APPPATH\Controllers\Main\BeritaController.php(46): view('main/berita/beritaDetailView', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Main\BeritaController->detail('2')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main\BeritaController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Yudha Prastya\\Downloads\\WEB\\public\\index.php')
+CRITICAL - 2025-02-24 05:15:16 --> ErrorException: Undefined array key "name"
+[Method: GET, Route: berita/2]
+in APPPATH\Views\main\berita\beritaDetailView.php on line 36.
+ 1 APPPATH\Views\main\berita\beritaDetailView.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name"', 'C:\\Users\\Yudha Prastya\\Downloads\\WEB\\app\\Views\\main\\berita\\beritaDetailView.php', 36)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\Users\\Yudha Prastya\\Downloads\\WEB\\app\\Views\\main\\berita\\beritaDetailView.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('main/berita/beritaDetailView', [], true)
+ 5 APPPATH\Controllers\Main\BeritaController.php(46): view('main/berita/beritaDetailView', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Main\BeritaController->detail('2')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main\BeritaController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Yudha Prastya\\Downloads\\WEB\\public\\index.php')
+CRITICAL - 2025-02-24 05:18:39 --> ErrorException: Undefined array key "name"
+[Method: GET, Route: berita/2]
+in APPPATH\Views\main\berita\beritaDetailView.php on line 36.
+ 1 APPPATH\Views\main\berita\beritaDetailView.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name"', 'C:\\Users\\Yudha Prastya\\Downloads\\WEB\\app\\Views\\main\\berita\\beritaDetailView.php', 36)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\Users\\Yudha Prastya\\Downloads\\WEB\\app\\Views\\main\\berita\\beritaDetailView.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('main/berita/beritaDetailView', [], true)
+ 5 APPPATH\Controllers\Main\BeritaController.php(42): view('main/berita/beritaDetailView', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Main\BeritaController->detail('2')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main\BeritaController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Yudha Prastya\\Downloads\\WEB\\public\\index.php')
+CRITICAL - 2025-02-24 05:18:41 --> ErrorException: Undefined array key "name"
+[Method: GET, Route: berita/2]
+in APPPATH\Views\main\berita\beritaDetailView.php on line 36.
+ 1 APPPATH\Views\main\berita\beritaDetailView.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name"', 'C:\\Users\\Yudha Prastya\\Downloads\\WEB\\app\\Views\\main\\berita\\beritaDetailView.php', 36)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\Users\\Yudha Prastya\\Downloads\\WEB\\app\\Views\\main\\berita\\beritaDetailView.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('main/berita/beritaDetailView', [], true)
+ 5 APPPATH\Controllers\Main\BeritaController.php(42): view('main/berita/beritaDetailView', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Main\BeritaController->detail('2')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main\BeritaController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Yudha Prastya\\Downloads\\WEB\\public\\index.php')
+DEBUG - 2025-02-24 05:18:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 05:18:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 05:19:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 05:19:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 05:19:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 05:19:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 05:19:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 05:19:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 05:19:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 05:19:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 05:19:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 05:19:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 05:22:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 05:22:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 05:22:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 05:22:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 05:22:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 05:22:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 05:27:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 05:27:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 05:36:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 05:36:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 05:36:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 05:36:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 05:36:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 05:36:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 06:12:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 06:12:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 06:25:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 06:25:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 06:43:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 06:43:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 06:47:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 06:47:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 08:23:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 08:23:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 08:23:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 08:23:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 08:24:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 08:24:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 08:24:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 08:24:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 08:24:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 08:24:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 08:26:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 08:26:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 08:26:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 08:26:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 08:26:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 08:26:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 08:26:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 08:26:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 08:26:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 08:26:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 08:27:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 08:27:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 08:27:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 08:27:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 08:27:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 08:27:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 08:28:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 08:28:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 08:29:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 08:29:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 08:29:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 08:29:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 08:29:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 08:29:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 08:29:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 08:29:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 16:47:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 16:47:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 16:47:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-02-24 16:47:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
