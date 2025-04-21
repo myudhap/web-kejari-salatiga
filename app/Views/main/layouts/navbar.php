@@ -6,7 +6,7 @@
             </div>
         </a>
         <div class="ml-2 mt-3">
-            <h6 class="my-0 ts-1" style="margin-bottom: -0.3rem !important;">Kejaksaan Republik Indonesia                            </h6>
+            <h6 class="my-0 ts-1" style="margin-bottom: -0.3rem !important;">Kejaksaan Republik Indonesia </h6>
             <h4 class="fw-bold text-dark ts-1">Kejaksaan Negeri Salatiga</h4>
         </div>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
@@ -79,9 +79,18 @@
                         <li><a class="dropdown-item" href="#">Layanan Permohonan Perpanjangan Penahanan</a></li>
                         <li><a class="dropdown-item" href="#">Layanan Penerangan Hukum</a></li> -->
                     </ul>
+                <li class="nav-item">
+                    <a class="nav-link <?php if ($base == "Berita") echo "active"; ?>" href="/berita">Berita</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link  <?php if ($base == "Berita") echo "active" ?>" href="/berita">Berita</a>
+                    <a class="nav-link <?php if ($base == "Login") echo "active"; ?> btn btn-primary btn-sm text-white" href="/login">
+                        Login
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link <?php if ($base == "Signup") echo "active"; ?> btn btn-primary btn-sm text-white" href="/register">
+                        Sign Up
+                    </a>
                 </li>
             </ul>
         </div>

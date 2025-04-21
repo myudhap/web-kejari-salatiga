@@ -29,7 +29,18 @@ $routes->get('/berita/(:segment)', 'Main\BeritaController::detail/$1');
 
 $routes->get('/informasi/jadwal-sidang', 'Main\InformasiController::jadwalSidang');
 
-$routes->group('panel', static function($routes) {
+// $routes->group('panel', static function ($routes) {
+//     $routes->get('/', 'Admin\DashboardController::index');
+//     $routes->get('list-user', 'Admin\UserController::index');
+//     $routes->get('berita', 'Admin\BeritaController::index');
+//     $routes->post('berita', 'Admin\BeritaController::store');
+//     $routes->get('berita/edit/(:segment)', 'Admin\BeritaController::edit/$1');
+//     $routes->post('berita/edit/(:segment)', 'Admin\BeritaController::update/$1');
+//     $routes->get('berita/delete/(:segment)', 'Admin\BeritaController::delete/$1');
+//     $routes->get('layanan/barang-bukti', 'Admin\LayananController::barangBukti');
+// });
+
+$routes->group('panel', ['filter' => 'adminauth'], static function ($routes) {
     $routes->get('/', 'Admin\DashboardController::index');
     $routes->get('list-user', 'Admin\UserController::index');
     $routes->get('berita', 'Admin\BeritaController::index');
@@ -48,3 +59,13 @@ $routes->post('/layanan/barang-bukti/check', 'Data\BarangBuktiController::checkP
 $routes->get('/layanan/kunjungan-tahanan', 'Main\LayananController::kunjunganTahanan', ['as' => 'layanan.kunjungan_tahanan']);
 $routes->post('/layanan/kunjungan-tahanan', 'Main\KunjunganTahananController::store');
 $routes->post('/layanan/kunjungan-tahanan/check', 'Main\KunjunganTahananController::check');
+
+// Routes Login
+$routes->get('/login', 'Auth::login');
+$routes->post('/login/auth', 'Auth::loginAuth');
+$routes->get('/logout', 'Auth::logout');
+$routes->get('/dashboard', 'Dashboard::index'); // Tambahkan jika belum
+
+// Routes Register
+$routes->get('/register', 'Auth::register');
+$routes->post('/register/store', 'Auth::registerStore');
