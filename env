@@ -33,8 +33,10 @@ app_baseURL = 'http://localhost:8080/'
 
 database.default.hostname = localhost
 database.default.database = knsalati_webknsalatiga
-database.default.username = knsalati_knsalatiga
-database.default.password = JerukPurut123
+; database.default.username = knsalati_knsalatiga
+; database.default.password = JerukPurut123
+database.default.username = root
+database.default.password = 
 database.default.DBDriver = MySQLi
 database.default.DBPrefix =
 database.default.port = 3306
