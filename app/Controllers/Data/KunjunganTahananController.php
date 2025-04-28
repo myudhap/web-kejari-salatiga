@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Controllers\Data;
 
 use App\Controllers\BaseController;
 use App\Models\KunjunganTahananModel;
+use App\Models\LayananPengambilanBarangBuktiModel;
 
 use function Config\validate_input;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Main\Controllers;
+namespace App\Controllers\Data;
 
 use App\Controllers\BaseController;
 use App\Models\LayananPengambilanBarangBuktiModel;
