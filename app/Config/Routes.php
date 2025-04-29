@@ -29,18 +29,9 @@ $routes->get('/berita/(:segment)', 'Main\BeritaController::detail/$1');
 
 $routes->get('/informasi/jadwal-sidang', 'Main\InformasiController::jadwalSidang');
 
-// $routes->group('panel', static function ($routes) {
-//     $routes->get('/', 'Admin\DashboardController::index');
-//     $routes->get('list-user', 'Admin\UserController::index');
-//     $routes->get('berita', 'Admin\BeritaController::index');
-//     $routes->post('berita', 'Admin\BeritaController::store');
-//     $routes->get('berita/edit/(:segment)', 'Admin\BeritaController::edit/$1');
-//     $routes->post('berita/edit/(:segment)', 'Admin\BeritaController::update/$1');
-//     $routes->get('berita/delete/(:segment)', 'Admin\BeritaController::delete/$1');
-//     $routes->get('layanan/barang-bukti', 'Admin\LayananController::barangBukti');
-// });
+// Routes untuk Admin (No Required Admin Auth)
 
-$routes->group('panel', ['filter' => 'adminauth'], static function ($routes) {
+$routes->group('panel', static function ($routes) {
     $routes->get('/', 'Admin\DashboardController::index');
     $routes->get('list-user', 'Admin\UserController::index');
     $routes->get('berita', 'Admin\BeritaController::index');
@@ -50,6 +41,19 @@ $routes->group('panel', ['filter' => 'adminauth'], static function ($routes) {
     $routes->get('berita/delete/(:segment)', 'Admin\BeritaController::delete/$1');
     $routes->get('layanan/barang-bukti', 'Admin\LayananController::barangBukti');
 });
+
+// Routes Untuk Admin Middleware (Required Admin Auth)
+
+// $routes->group('panel', ['filter' => 'adminauth'], static function ($routes) {
+//     $routes->get('/', 'Admin\DashboardController::index');
+//     $routes->get('list-user', 'Admin\UserController::index');
+//     $routes->get('berita', 'Admin\BeritaController::index');
+//     $routes->post('berita', 'Admin\BeritaController::store');
+//     $routes->get('berita/edit/(:segment)', 'Admin\BeritaController::edit/$1');
+//     $routes->post('berita/edit/(:segment)', 'Admin\BeritaController::update/$1');
+//     $routes->get('berita/delete/(:segment)', 'Admin\BeritaController::delete/$1');
+//     $routes->get('layanan/barang-bukti', 'Admin\LayananController::barangBukti');
+// });
 
 
 // Routes Layanan
