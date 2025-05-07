@@ -3,6 +3,13 @@
 <?= $this->section("title") ?>Intelijen<?= $this->endSection() ?>
 
 <?= $this->section("content") ?>
+<style>
+    .deskripsi {
+        padding: 15px;
+        background-color: wheat;
+        border-radius: 5px;
+    }
+</style>
 <section>
     <section id="breadcrumb">
         <div class="container">
@@ -13,25 +20,36 @@
                 </ol>
             </nav>
             <div class="row" style="text-align: justify;">
-                <div class="row my-2">
-                    <div class="col text-center">
-                        <h2>
-                            <strong class="text-primary">Intelijen</strong>
-                        </h2>
+                <div class="col-sm-5 col-md-6 justify-content-center">
+                    <div class="row my-2 d-flex justify-content-center" style="text-align: center;">
+                        <img src="<?= base_url('assets') ?>/img/struktural/kasi_intel.png" alt="kasubagbin" class="avatar img-fluid" style="width: 350px; height: 500px;">
+                        <strong class="fw-bold text-primary">ERWIN RIONALDY KOLOWAY, S.H., M.H.</strong>
+                        <strong style="scale: 0.8;">Kepala Seksi Intelijen</strong>
                     </div>
                 </div>
-                <div class="row mb-3">
-                    <div class="col text-center mb-5">
-                        <strong>
-                        Tugas Bagian Intelijen menurut Peraturan Jaksa Agung Republik Indonesia
-                        <br>
-                        Nomor: 006/A/JA/07/2017 tanggal 20 Juli 2017
-                        </strong>
+
+                <div class="col-sm-5 col-md-6 d-flex justify-content-center">
+                    <div class="row my-2">
+                        <div class="col text-center">
+                            <h2>
+                                <strong class="text-primary">Intelijen</strong>
+                            </h2>
+                            <div class="col text-center mb-5">
+                                <strong>
+                                    Tugas Bagian Intelijen menurut Peraturan Jaksa Agung Republik Indonesia
+                                    <br>
+                                    Nomor: 006/A/JA/07/2017 tanggal 20 Juli 2017
+                                </strong>
+                                <br><br><br>
+                                <p><strong class="text-primary">Tugas:</strong></p>
+                                <div class="text-align-justify" style="text-align: justify;">
+                                    <p>Intelijen mempunyai tugas melaksanakan penyiapan, perumusan rencana dan program kerja serta laporan pelaksanaannya, perencanaan, pengkajian, pelaksanaan, pengadministrasian, pengendalian, penilaian dan pelaporan kebijakan teknis, kegiatan intelijen, operasi intelijen, pengawalan dan pengamanan pemerintahan dan pembangunan, administrasi intelijen, dan pemberian dukungan teknis secara intelijen kepada bidang lain, perencanaan, pelaksanaan, dan pelaporan pemetaan, perencanaan, pengelolaan dan pelaporan teknologi informasi, perencanaan, pelaksanaan, pengadministrasian, dan pelaporan kegiatan bidang penerangan hukum, penyusunan, penyajian, pengadministrasian, pendistribusian, dan pengarsipan laporan berkala, laporan insidentil, perkiraan keadaan intelijen, hasil pelaksanaan rencana kerja dan program kerja, kegiatan intelijen dan operasi intelijen, pengawalan dan pengamanan pemerintahan dan pembangunan proyek yang bersifat strategis, perencanaan, pengelolaan, dan pelaporan bank data intelijen dan pengamanan informasi, pengendalian penyelenggaraan administrasi intelijen, pemeliharaan perangkat intelijen, perencanaan, dan pelaksanaan koordinasi dan/atau kerja sama dengan pemerintah daerah, Badan Usaha Milik Daerah, instansi, dan organisasi, pemberian bimbingan dan pembinaan teknis intelijen dan administrasi intelijen, dan penyiapan bahan evaluasi kinerja fungsional Sandiman yang berkaitan dengan bidang ideologi, politik, pertahanan, keamanan, sosial, budaya, kemasyarakatan, ekonomi, keuangan, pengamanan pembangunan strategis, teknologi intelijen, produksi intelijen, dan penerangan hukum.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <p><strong class="text-primary">Tugas:</strong></p>
-                    <p>Intelijen mempunyai tugas melaksanakan penyiapan, perumusan rencana dan program kerja serta laporan pelaksanaannya, perencanaan, pengkajian, pelaksanaan, pengadministrasian, pengendalian, penilaian dan pelaporan kebijakan teknis, kegiatan intelijen, operasi intelijen, pengawalan dan pengamanan pemerintahan dan pembangunan, administrasi intelijen, dan pemberian dukungan teknis secara intelijen kepada bidang lain, perencanaan, pelaksanaan, dan pelaporan pemetaan, perencanaan, pengelolaan dan pelaporan teknologi informasi, perencanaan, pelaksanaan, pengadministrasian, dan pelaporan kegiatan bidang penerangan hukum, penyusunan, penyajian, pengadministrasian, pendistribusian, dan pengarsipan laporan berkala, laporan insidentil, perkiraan keadaan intelijen, hasil pelaksanaan rencana kerja dan program kerja, kegiatan intelijen dan operasi intelijen, pengawalan dan pengamanan pemerintahan dan pembangunan proyek yang bersifat strategis, perencanaan, pengelolaan, dan pelaporan bank data intelijen dan pengamanan informasi, pengendalian penyelenggaraan administrasi intelijen, pemeliharaan perangkat intelijen, perencanaan, dan pelaksanaan koordinasi dan/atau kerja sama dengan pemerintah daerah, Badan Usaha Milik Daerah, instansi, dan organisasi, pemberian bimbingan dan pembinaan teknis intelijen dan administrasi intelijen, dan penyiapan bahan evaluasi kinerja fungsional Sandiman yang berkaitan dengan bidang ideologi, politik, pertahanan, keamanan, sosial, budaya, kemasyarakatan, ekonomi, keuangan, pengamanan pembangunan strategis, teknologi intelijen, produksi intelijen, dan penerangan hukum.</p>
                 </div>
-                <div class="row gx-5">
+                <div class="deskripsi row gx-5">
                     <div class="col-lg-6">
                         <p><strong class="text-primary">Fungsi:</strong></p>
                         <ol style="font-size: 0.9rem;">

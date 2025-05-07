@@ -3,35 +3,52 @@
 <?= $this->section("title") ?>Perdata & Tata Usaha Negara<?= $this->endSection() ?>
 
 <?= $this->section("content") ?>
+<style>
+    .deskripsi {
+        padding: 15px;
+        background-color: wheat;
+        border-radius: 5px;
+    }
+</style>
 <section>
     <section id="breadcrumb">
         <div class="container">
-        <nav aria-label="breadcrumb">
+            <nav aria-label="breadcrumb">
                 <ol class="breadcrumb fw-bolder">
                     <li class="breadcrumb-item">Bidang</li>
                     <li class="breadcrumb-item active text-primary" aria-current="page">Perdata & Tata Usaha Negara</li>
                 </ol>
             </nav>
             <div class="row" style="text-align: justify;">
-                <div class="row my-2">
-                    <div class="col text-center">
-                        <h2>
-                            <strong class="text-primary">Perdata & Tata Usaha Negara</strong>
-                        </h2>
+                <div class="col-sm-5 col-md-6 justify-content-center">
+                    <div class="row my-2 d-flex justify-content-center" style="text-align: center;">
+                        <img src="<?= base_url('assets') ?>/img/struktural/kasi_datun.png" alt="kasubagbin" class="avatar img-fluid" style="width: 350px; height: 500px;">
+                        <strong class="fw-bold text-primary">ARDHANA RISWATI P, S.H., M.H.</strong>
+                        <strong style="scale: 0.8;">Kepala Seksi Tindak Pidana Umum</strong>
                     </div>
                 </div>
-                <div class="row mb-3">
-                    <div class="col text-center mb-5">
-                        <strong>
-                        Tugas Bagian Perdata & Tata Usaha Negara menurut Peraturan Jaksa Agung Republik Indonesia
-                        <br>
-                        Nomor: 006/A/JA/07/2017 tanggal 20 Juli 2017
-                        </strong>
+                <div class="col-sm-5 col-md-6 d-flex justify-content-center">
+                    <div class="row my-2">
+                        <div class="col text-center">
+                            <h2>
+                                <strong class="text-primary">Perdata & Tata Usaha Negara</strong>
+                            </h2>
+                            <div class="col text-center mb-5">
+                                <strong>
+                                    Tugas Bagian Perdata & Tata Usaha Negara menurut Peraturan Jaksa Agung Republik Indonesia
+                                    <br>
+                                    Nomor: 006/A/JA/07/2017 tanggal 20 Juli 2017
+                                </strong>
+                                <br><br><br>
+                                <p><strong class="text-primary">Tugas:</strong></p>
+                                <div class="text-align-justify" style="text-align: justify;">
+                                    <p>Seksi Perdata & Tata Usaha Negara mempunyai tugas melakukan pemantauan, analisis, evaluasi, dan pelaporan di bidang perdata dan tata usaha negara. </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <p><strong class="text-primary">Tugas:</strong></p>
-                    <p>Seksi Perdata & Tata Usaha Negara mempunyai tugas melakukan pemantauan, analisis, evaluasi, dan pelaporan di bidang perdata dan tata usaha negara. </p>
                 </div>
-                <div class="row gx-5">
+                <div class="deskripsi row gx-5">
                     <div class="col-lg-6">
                         <p><strong class="text-primary">Fungsi:</strong></p>
                         <ol style="font-size: 0.9rem;">
