@@ -82,11 +82,11 @@
                 <li class="nav-item">
                     <a class="nav-link <?php if ($base == "Berita") echo "active"; ?>" href="/berita">Berita</a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link <?php if ($base == "Login") echo "active"; ?> btn btn-secondary text-white" href="/login">
                         Login
                     </a>
-                </li>
+                </li> -->
             </ul>
         </div>
     </div>

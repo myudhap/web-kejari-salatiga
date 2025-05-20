@@ -44,8 +44,8 @@
             <div class="form-group mb-3">
                 <input type="password" name="password" class="form-control" placeholder="Password" required>
             </div>
-            belum memiliki akun?
-            <a href="<?= base_url('/register') ?>">Daftar di sini</a>
+            <!-- belum memiliki akun?
+            <a href="<?= base_url('/register') ?>">Daftar di sini</a> -->
             <button type="submit" class="btn btn-success w-100">Login</button>
         </form>
     </div>

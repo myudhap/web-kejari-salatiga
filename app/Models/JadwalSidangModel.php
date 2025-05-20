@@ -13,12 +13,14 @@ class JadwalSidangModel extends Model
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
     protected $allowedFields    = [
+        'tanggal',
         'terdakwa',
         'jpu',
         'no_perkara',
         'agenda',
+        'kategori',
         'tempat',
-        'tanggal'
+        'created_at'
     ];
 
     protected bool $allowEmptyInserts = false;

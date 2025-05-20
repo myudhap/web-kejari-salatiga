@@ -73,3 +73,14 @@ $routes->get('/dashboard', 'Dashboard::index'); // Tambahkan jika belum
 // Routes Register
 $routes->get('/register', 'Auth::register');
 $routes->post('/register/store', 'Auth::registerStore');
+
+// Routes Jadwal Sidang 
+$routes->group('panel', static function ($routes) {
+    $routes->get('jadwal-sidang', 'Admin\JadwalSidangController::index');
+    $routes->get('jadwal-sidang/create', 'Admin\JadwalSidangController::create');
+    $routes->post('jadwal-sidang/store', 'Admin\JadwalSidangController::store');
+    $routes->get('jadwal-sidang/edit/(:num)', 'Admin\JadwalSidangController::edit/$1');
+    $routes->post('jadwal-sidang/update/(:num)', 'Admin\JadwalSidangController::update/$1');
+    $routes->get('jadwal-sidang/delete/(:num)', 'Admin\JadwalSidangController::delete/$1');
+    // ['filter' => 'adminOnly'],
+});
