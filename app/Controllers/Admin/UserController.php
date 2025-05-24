@@ -14,13 +14,15 @@ class UserController extends BaseController
     public function __construct()
     {
         $this->data = [
-            "title" => "List User"
+            "title" => "User"
         ];
         $this->model = new UserModel();
     }
 
     public function index()
     {
+        $this->data['subtitle'] = "List User";
+
         $this->data['users'] = $this->model->orderBy("name", "asc")->findAll();
         $roleModel = new RoleModel();
         $this->data['roles'] = $roleModel->findAll();
@@ -30,6 +32,7 @@ class UserController extends BaseController
 
     public function store()
     {
+        
         $this->model->save([
             "name" => $this->request->getPost("name"),
             "email" => $this->request->getPost("email"),
