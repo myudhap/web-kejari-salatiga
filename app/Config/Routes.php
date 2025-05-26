@@ -6,7 +6,7 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
-$routes->get('/', 'Main\HomeController::index');
+$routes->get('/', 'Guest\Beranda::index');
 
 $routes->get('/profil/sejarah', 'Main\ProfileController::sejarah');
 $routes->get('/profil/visi-misi', 'Main\ProfileController::visiMisi');
@@ -14,6 +14,7 @@ $routes->get('/profil/logo', 'Main\ProfileController::logo');
 $routes->get('/profil/tri-krama-adhyaksa', 'Main\ProfileController::triKrama');
 $routes->get('/profil/struktur-organisasi', 'Main\ProfileController::strukturOrganisasi');
 
+// $routes->get('/bidang/(:segment)')
 $routes->get('/bidang/pembinaan', 'Main\BidangController::pembinaan');
 $routes->get('/bidang/intel', 'Main\BidangController::intel');
 $routes->get('/bidang/pidum', 'Main\BidangController::pidum');
@@ -24,8 +25,8 @@ $routes->get('/bidang/pb3r', 'Main\BidangController::pb3r');
 $routes->get('/layanan/survey', 'Main\LayananController::survey');
 $routes->get('/layanan/pelayanan-hukum-gratis', 'Main\LayananController::pelayananHukumGratis');
 
-$routes->get('/berita', 'Main\BeritaController::index');
-$routes->get('/berita/(:segment)', 'Main\BeritaController::detail/$1');
+$routes->get('/berita', 'Guest\Berita::index');
+$routes->get('/berita/(:segment)', 'Guest\Berita::detail/$1');
 
 $routes->get('/informasi/jadwal-sidang', 'Main\InformasiController::jadwalSidang');
 
