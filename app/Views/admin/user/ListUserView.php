@@ -32,10 +32,24 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Password</label>
-                                        <input type="text" class="form-control" name="isiBerita" id="isiBerita" rows="4" placeholder="Enter ..."></input>
+                                        <div class="input-group">
+                                            <input type="password" class="form-control" name="password" id="password" rows="4" placeholder="Enter ..."></input>
+                                            <div class="input-group-append">
+                                                <button class="input-group-text" id="basic-addon2" type="button" onclick="togglePassword()"><i class="fas fa-eye"></i></button>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="">Role</label>
+                                        <label>Confirm Password</label>
+                                        <div class="input-group">
+                                            <input type="password" class="form-control" name="confirmPassword" id="confirmPassword" rows="4" placeholder="Enter ..." onblur="validatePassword()"></input>
+                                            <div class="input-group-append">
+                                                <button class="input-group-text" id="basic-addon2" type="button" onclick="toggleConfirmPassword()"><i class="fas fa-eye"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Role</label>
                                         <select class="form-control">
                                             <?php foreach($roles as $role): ?>
                                             <option value="<?= $role['id'] ?>"><?= $role['name'] ?></option>
@@ -158,5 +172,27 @@
 <?= $this->endSection() ?>
 
 <?= $this->section("script") ?>
-    
+<script>
+    function togglePassword() {
+        console.log('test');
+        var passwordInput = document.getElementById('password');
+        passwordInput.type = passwordInput.type === 'password' ? 'text' : 'password';
+    }
+    function toggleConfirmPassword() {
+        var confirmPasswordInput = document.getElementById('confirmPassword');
+        confirmPasswordInput.type = confirmPasswordInput.type === 'password' ? 'text' : 'password';
+    }
+    function validatePassword() {
+        var passwordInput = document.getElementById('password');
+        var confirmPasswordInput = document.getElementById('confirmPassword');
+        if (passwordInput.value !== confirmPasswordInput.value) {
+            console.log('test');
+            confirmPasswordInput.setCustomValidity('Konfirm Password tidak sama');
+        } else {
+            confirmPasswordInput.setCustomValidity('');
+        }
+
+        confirmPasswordInput.reportValidity();
+    }
+</script>
 <?= $this->endSection() ?>

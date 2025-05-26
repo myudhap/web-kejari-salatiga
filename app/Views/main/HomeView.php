@@ -167,7 +167,7 @@
                 </div>
                 <br>
                 <br>
-                <!-- <div class="row">
+                <div class="row">
                     <div class="center">
                         <div class="text-center">
                             <img src="<?php echo base_url('assets') ?>/img/struktural/kasubagbin.png" alt="" class="mx-auto" width="50%">
@@ -206,7 +206,7 @@
                             <strong>Kepala Seksi PB3R</strong>
                         </div>
                     </div>
-                </div> -->
+                </div>
             </div>
         </section>
         <section id="social-media" class="py-5">
