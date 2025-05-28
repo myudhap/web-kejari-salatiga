@@ -75,13 +75,22 @@ $routes->get('/dashboard', 'Dashboard::index'); // Tambahkan jika belum
 $routes->get('/register', 'Auth::register');
 $routes->post('/register/store', 'Auth::registerStore');
 
-// Routes Jadwal Sidang 
-$routes->group('panel', static function ($routes) {
-    $routes->get('jadwal-sidang', 'Admin\JadwalSidangController::index');
-    $routes->get('jadwal-sidang/create', 'Admin\JadwalSidangController::create');
-    $routes->post('jadwal-sidang/store', 'Admin\JadwalSidangController::store');
-    $routes->get('jadwal-sidang/edit/(:num)', 'Admin\JadwalSidangController::edit/$1');
-    $routes->post('jadwal-sidang/update/(:num)', 'Admin\JadwalSidangController::update/$1');
-    $routes->get('jadwal-sidang/delete/(:num)', 'Admin\JadwalSidangController::delete/$1');
-    // ['filter' => 'adminOnly'],
+    // Routes Jadwal Sidang 
+    $routes->group('panel', static function ($routes) {
+        $routes->get('jadwal-sidang', 'Admin\JadwalSidangController::index');
+        $routes->get('jadwal-sidang/create', 'Admin\JadwalSidangController::create');
+        $routes->post('jadwal-sidang/store', 'Admin\JadwalSidangController::store');
+        $routes->get('jadwal-sidang/edit/(:num)', 'Admin\JadwalSidangController::edit/$1');
+        $routes->post('jadwal-sidang/update/(:num)', 'Admin\JadwalSidangController::update/$1');
+        $routes->get('jadwal-sidang/delete/(:num)', 'Admin\JadwalSidangController::delete/$1');
+        // ['filter' => 'adminOnly'],
+        $routes->post('panel/jadwal-sidang/update/(:num)', 'JadwalController::update/$1');
+
+    // Routes Buku Tamu
+        $routes->get('buku-tamu', 'Admin\BukuTamuController::index');
+        $routes->get('buku-tamu/create', 'Admin\BukuTamuController::create');
+        $routes->post('buku-tamu/store', 'Admin\BukuTamuController::store');
+        $routes->get('buku-tamu/edit/(:num)', 'Admin\BukuTamuController::edit/$1');
+        $routes->post('buku-tamu/update/(:num)', 'Admin\BukuTamuController::update/$1');
+        $routes->get('buku-tamu/delete/(:num)', 'Admin\BukuTamuController::delete/$1');
 });

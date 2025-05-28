@@ -34,12 +34,18 @@ $nav4->href = '/panel/jadwal-sidang';
 
 $nav5 = new Nav();
 $nav5->name = "Layanan";
-$nav5->icon = "fa-calendar";
+$nav5->icon = "fa-globe";
 $nav5->hasList = true;
 $nav5->list = array('Pengambilan Barang Bukti', 'Hukum Gratis', 'Kunjungan Tahanan');
 $nav5->listHref = array('/panel/layanan/barang-bukti', '/panel/layanan/hukum-gratis', '/panel/layanan/kunjungan-tahanan');
 
-$navList = array($nav1, $nav2, $nav3, $nav4, $nav5);
+$nav6 = new Nav();
+$nav6->name = "Buku Tamu";
+$nav6->icon = "fa-book";
+$nav6->hasList = false;
+$nav6->href = '/panel/buku-tamu';
+
+$navList = array($nav1, $nav2, $nav3, $nav4, $nav5, $nav6);
 ?>
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <a href="index3.html" class="brand-link">

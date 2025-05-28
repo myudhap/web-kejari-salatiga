@@ -4,15 +4,15 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class CreateJadwalSidangTableMigration extends Migration
+class CreateJadwalSidangTable extends Migration
 {
     public function up()
     {
         $this->forge->addField([
             'id' => [
-                'type' => 'INT',
-                'constraint' => 5,
-                'unsigned' => true,
+                'type'           => 'INT',
+                'constraint'     => 5,
+                'unsigned'       => true,
                 'auto_increment' => true,
             ],
             'terdakwa' => [
@@ -22,15 +22,20 @@ class CreateJadwalSidangTableMigration extends Migration
                 'type' => 'TEXT',
             ],
             'no_perkara' => [
-                'type' => 'VARCHAR',
+                'type'       => 'VARCHAR',
                 'constraint' => 100,
             ],
             'agenda' => [
                 'type' => 'TEXT',
             ],
             'tempat' => [
-                'type' => 'VARCHAR',
+                'type'       => 'VARCHAR',
                 'constraint' => 100,
+            ],
+            'kategori' => [
+                'type'       => 'ENUM',
+                'constraint' => ['pidum', 'pidsus'],
+                'default'    => 'pidum'
             ],
             'tanggal' => [
                 'type' => 'DATE',
@@ -43,6 +48,6 @@ class CreateJadwalSidangTableMigration extends Migration
 
     public function down()
     {
-        $this->forge->dropTable("jadwal_sidang");
+        $this->forge->dropTable('jadwal_sidang');
     }
 }

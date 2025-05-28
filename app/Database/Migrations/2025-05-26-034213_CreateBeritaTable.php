@@ -4,31 +4,31 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class BeritaMigration extends Migration
+class CreateBeritaTable extends Migration
 {
     public function up()
     {
         $this->forge->addField([
             'id' => [
-                'type' => 'INT',
-                'constraint' => 5,
-                'unsigned' => true,
+                'type'           => 'INT',
+                'constraint'     => 5,
+                'unsigned'       => true,
                 'auto_increment' => true,
             ],
             'user_id' => [
-                'type' => 'INT',
+                'type' 		 => 'INT',
                 'constraint' => 5,
-                'unsigned' => true,
+                'unsigned'   => true,
             ],
             'judul' => [
-                'type' => 'VARCHAR',
-                'constraint' => 100,
+                'type' 		 => 'VARCHAR',
+                'constraint' => 255,
             ],
             'isi' => [
                 'type' => 'TEXT',
             ],
             'gambar' => [
-                'type' => 'VARCHAR',
+                'type' 		 => 'VARCHAR',
                 'constraint' => 255,
             ],
             "created_at datetime default current_timestamp"
@@ -39,6 +39,6 @@ class BeritaMigration extends Migration
 
     public function down()
     {
-        $this->forge->dropTable("berita");
+		$this->forge->dropTable('berita');
     }
 }
