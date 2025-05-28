@@ -7,55 +7,38 @@ use App\Models\BukuTamuModel;
 
 class BukuTamuController extends BaseController
 {
-    protected $bukuTamuModel;
-
     /*************  ✨ Windsurf Command ⭐  *************/
     /**
-     * Constructor
+     * Menampilkan halaman index buku tamu
      *
-     * @return void
+     * @return view
      */
-    /*******  8eae4dc2-99b0-43fb-94d3-2a09480c37db  *******/
-    public function __construct()
-    {
-        $this->bukuTamuModel = new BukuTamuModel();
-    }
-
+    /*******  5482b1e7-201f-4428-b610-b69ba54efd70  *******/
     public function index()
     {
-        $data['buku_tamu'] = $this->bukuTamuModel->orderBy('created_at', 'DESC')->findAll();
-        $data['title'] = 'Buku Tamu';  // Make sure this matches your nav name exactly
-        $data['subtitle'] = '';         // Or set if submenu active
+        $model = new BukuTamuModel();
+        $data['tamus'] = $model->orderBy('created_at', 'DESC')->findAll();
+        $data['title'] = 'Buku Tamu'; // ✅ Tambahkan ini
         return view('admin/buku_tamu/index', $data);
     }
 
-
-    public function create()
-    {
-        $data = [
-            'title' => 'Tambah Buku Tamu',
-            'tamu' => null
-        ];
-        return view('admin/buku_tamu/create', $data);
-    }
-
-
     public function store()
     {
-        $model = new BukuTamuModel();
+        $model = new \App\Models\BukuTamuModel();
 
         $file = $this->request->getFile('foto');
         $filename = '';
 
         if ($file && $file->isValid() && !$file->hasMoved()) {
             $filename = $file->getRandomName();
-            $file->move('uploads/', $filename);
+            $file->move('uploads/foto/', $filename);
         }
 
         $data = [
             'nama_petugas'     => $this->request->getPost('nama_petugas'),
             'tipe_pelayanan'   => $this->request->getPost('tipe_pelayanan'),
             'tujuan_tamu'      => $this->request->getPost('tujuan_tamu'),
+            'data_pribadi'     => $this->request->getPost('data_pribadi'), // ✅ penting
             'tipe_identitas'   => $this->request->getPost('tipe_identitas'),
             'nomor_identitas'  => $this->request->getPost('nomor_identitas'),
             'nama'             => $this->request->getPost('nama'),
@@ -69,39 +52,61 @@ class BukuTamuController extends BaseController
             'foto'             => $filename
         ];
 
+        // Debug: tampilkan data jika insert gagal
         if (!$model->insert($data)) {
-            return redirect()->back()->withInput()->with('errors', $model->errors());
+            dd([
+                'data' => $data,
+                'errors' => $model->errors(),
+            ]);
         }
 
-        return redirect()->to('panel/buku_tamu')->with('success', 'Data berhasil disimpan');
+        return redirect()->to(base_url('panel/buku-tamu'))->with('success', 'Data tamu berhasil ditambahkan.');
     }
 
 
-
-
-    public function edit($id)
+    public function create()
     {
-        $data['tamu'] = $this->bukuTamuModel->find($id);
-        $data['title'] = 'Buku Tamu';
-        return view('admin/buku_tamu/edit', $data);
+        $data['title'] = 'Tambah Buku Tamu'; // jika digunakan
+        return view('admin/buku_tamu/create', $data); // ✅ ini HARUS cocok dengan lokasi file
     }
+
 
     public function update($id)
     {
+        $model = new BukuTamuModel();
         $data = $this->request->getPost();
-        $foto = $this->request->getFile('foto');
-        if ($foto && $foto->isValid()) {
-            $filename = $foto->getRandomName();
-            $foto->move('uploads/foto/', $filename);
+        $file = $this->request->getFile('foto');
+
+        if ($file && $file->isValid() && !$file->hasMoved()) {
+            $filename = $file->getRandomName();
+            $file->move('uploads/foto/', $filename);
             $data['foto'] = $filename;
         }
-        $this->bukuTamuModel->update($id, $data);
-        return redirect()->to('panel/buku-tamu')->with('success', 'Data berhasil diperbarui.');
+
+        $model->update($id, $data);
+        return redirect()->back()->with('success', 'Data tamu berhasil diperbarui.');
     }
+
+    public function edit($id)
+    {
+        $model = new BukuTamuModel();
+        $tamu = $model->find($id);
+
+        if (!$tamu) {
+            return redirect()->to('panel/buku-tamu')->with('error', 'Data tidak ditemukan.');
+        }
+
+        return view('admin/buku_tamu/edit', [
+            'tamu' => $tamu,
+            'title' => 'Buku Tamu'
+        ]);
+    }
+
 
     public function delete($id)
     {
-        $this->bukuTamuModel->delete($id);
-        return redirect()->to('panel/buku-tamu')->with('success', 'Data berhasil dihapus.');
+        $model = new BukuTamuModel();
+        $model->delete($id);
+        return redirect()->back()->with('success', 'Data tamu berhasil dihapus.');
     }
 }

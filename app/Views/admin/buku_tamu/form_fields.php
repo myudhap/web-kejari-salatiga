@@ -7,11 +7,11 @@ $value = function ($key) use ($tamu) {
 <div class="row">
     <div class="col-md-6">
         <div class="mb-3">
-            <label>Nama Petugas*</label>
+            <label>Nama Petugas<span class="text-danger">*</span></label>
             <input type="text" name="nama_petugas" class="form-control" value="<?= $value('nama_petugas') ?>" required>
         </div>
         <div class="mb-3">
-            <label>Tipe Pelayanan*</label>
+            <label>Tipe Pelayanan<span class="text-danger">*</span></label>
             <input type="text" name="tipe_pelayanan" class="form-control" value="<?= $value('tipe_pelayanan') ?>" required>
         </div>
         <div class="mb-3">
@@ -23,7 +23,7 @@ $value = function ($key) use ($tamu) {
             <textarea name="data_pribadi" class="form-control"><?= $value('data_pribadi') ?></textarea>
         </div>
         <div class="mb-3">
-            <label>Tipe Identitas*</label>
+            <label>Tipe Identitas<span class="text-danger"><span class="text-danger">*</span></span></label>
             <select name="tipe_identitas" class="form-control" required>
                 <option value="">-- Pilih --</option>
                 <option value="KTP" <?= $value('tipe_identitas') == 'KTP' ? 'selected' : '' ?>>KTP</option>
@@ -32,11 +32,11 @@ $value = function ($key) use ($tamu) {
             </select>
         </div>
         <div class="mb-3">
-            <label>Nomor Identitas*</label>
+            <label>Nomor Identitas<span class="text-danger"><span class="text-danger">*</span></span></label>
             <input type="text" name="nomor_identitas" class="form-control" value="<?= $value('nomor_identitas') ?>" required>
         </div>
         <div class="mb-3">
-            <label>Nama*</label>
+            <label>Nama<span class="text-danger"><span class="text-danger">*</span></span></label>
             <input type="text" name="nama" class="form-control" value="<?= $value('nama') ?>" required>
         </div>
         <div class="mb-3">
@@ -55,7 +55,7 @@ $value = function ($key) use ($tamu) {
             <input type="text" name="plat_kendaraan" class="form-control" value="<?= $value('plat_kendaraan') ?>">
         </div>
         <div class="mb-3">
-            <label>Jenis Kelamin*</label>
+            <label>Jenis Kelamin<span class="text-danger"><span class="text-danger">*</span></span></label>
             <select name="jenis_kelamin" class="form-control" required>
                 <option value="">-- Pilih --</option>
                 <option value="Laki-laki" <?= $value('jenis_kelamin') == 'Laki-laki' ? 'selected' : '' ?>>Laki-laki</option>
@@ -78,9 +78,10 @@ $value = function ($key) use ($tamu) {
             <label>Foto</label>
             <?php if (!empty($tamu['foto'])): ?>
                 <br>
-                <img src="<?= base_url('uploads/foto/' . $tamu['foto']) ?>" width="100" class="mb-2">
+                <img src="<?= base_url('uploads/foto/' . $tamu['foto']) ?>" width="150" class="img-thumbnail mb-2">
             <?php endif ?>
             <input type="file" name="foto" class="form-control">
         </div>
+
     </div>
 </div>

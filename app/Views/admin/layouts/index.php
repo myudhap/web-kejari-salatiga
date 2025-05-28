@@ -29,6 +29,9 @@
     <link rel="stylesheet" href="<?php echo base_url('assets/vendor/adminLTE') ?>/plugins/daterangepicker/daterangepicker.css">
     <!-- summernote -->
     <link rel="stylesheet" href="<?php echo base_url('assets/vendor/adminLTE') ?>/plugins/summernote/summernote-bs4.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
