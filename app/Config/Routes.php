@@ -6,91 +6,82 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
-$routes->get('/', 'Guest\Beranda::index');
 
-$routes->get('/profil/sejarah', 'Main\ProfileController::sejarah');
-$routes->get('/profil/visi-misi', 'Main\ProfileController::visiMisi');
-$routes->get('/profil/logo', 'Main\ProfileController::logo');
-$routes->get('/profil/tri-krama-adhyaksa', 'Main\ProfileController::triKrama');
-$routes->get('/profil/struktur-organisasi', 'Main\ProfileController::strukturOrganisasi');
+// Guest Routes
+$routes->group('', ['namespace' => 'App\Controllers\Guest'], function($routes) {
+    $routes->get('/', 'Beranda::index');
 
-// $routes->get('/bidang/(:segment)')
-$routes->get('/bidang/pembinaan', 'Main\BidangController::pembinaan');
-$routes->get('/bidang/intel', 'Main\BidangController::intel');
-$routes->get('/bidang/pidum', 'Main\BidangController::pidum');
-$routes->get('/bidang/pidsus', 'Main\BidangController::pidsus');
-$routes->get('/bidang/datun', 'Main\BidangController::datun');
-$routes->get('/bidang/pb3r', 'Main\BidangController::pb3r');
+    $routes->group('profil', function($routes) {
+        $routes->get('sejarah', 'Profil::sejarah');
+        $routes->get('visi-misi', 'Profil::visiMisi');
+        $routes->get('logo', 'Profil::logo');
+        $routes->get('tri-krama-adhyaksa', 'Profil::triKrama');
+        $routes->get('struktur-organisasi', 'Profil::strukturOrganisasi');
+    });
 
-$routes->get('/layanan/survey', 'Main\LayananController::survey');
-$routes->get('/layanan/pelayanan-hukum-gratis', 'Main\LayananController::pelayananHukumGratis');
+    $routes->get('/bidang/(:segment)', 'Bidang::detail/$1');
 
-$routes->get('/berita', 'Guest\Berita::index');
-$routes->get('/berita/(:segment)', 'Guest\Berita::detail/$1');
+    $routes->group('layanan', function($routes) {
+        $routes->get('survey', 'Layanan::survey');
+        $routes->get('pelayanan-hukum-gratis', 'Layanan::pelayananHukumGratis');
+        $routes->group('barang-bukti', function($routes) {
+            $routes->get('', 'Layanan::barangBukti', ['as' => 'layanan.barang_bukti']);
+            $routes->post('', 'Layanan::storeBarangBukti');
+            $routes->post('check', 'Layanan::checkBarangBukti');
+        });
+        $routes->group('kunjungan-tahanan', function($routes) {
+            $routes->get('', 'Layanan::kunjunganTahanan', ['as' => 'layanan.kunjungan_tahanan']);
+            $routes->post('', 'Main\KunjunganTahananController::store');
+            $routes->post('check', 'Main\KunjunganTahananController::check');
+        });
+    });
+    
+    $routes->get('/berita', 'Berita::index');
+    $routes->get('/berita/(:segment)', 'Berita::detail/$1');
 
-$routes->get('/informasi/jadwal-sidang', 'Main\InformasiController::jadwalSidang');
-
-// Routes untuk Admin (No Required Admin Auth)
-
-$routes->group('panel', static function ($routes) {
-    $routes->get('/', 'Admin\DashboardController::index');
-    $routes->get('list-user', 'Admin\UserController::index');
-    $routes->get('berita', 'Admin\BeritaController::index');
-    $routes->post('berita', 'Admin\BeritaController::store');
-    $routes->get('berita/edit/(:segment)', 'Admin\BeritaController::edit/$1');
-    $routes->post('berita/edit/(:segment)', 'Admin\BeritaController::update/$1');
-    $routes->get('berita/delete/(:segment)', 'Admin\BeritaController::delete/$1');
-    $routes->get('layanan/barang-bukti', 'Admin\LayananController::barangBukti');
+    $routes->get('/informasi/jadwal-sidang', 'Main\InformasiController::jadwalSidang');
 });
 
-// Routes Untuk Admin Middleware (Required Admin Auth)
+// Admin Routes
+$routes->group('panel', ['namespace' => 'App\Controllers\Admin'], function($routes) {
+// $routes->group('panel', ['filter' => 'adminauth'], ['namespace' => 'App\Controllers\Admin'], function($routes) {
+    // Login
+    $routes->get('/login', 'Auth::login');
+    $routes->post('/login/auth', 'Auth::loginAuth');
+    $routes->get('/logout', 'Auth::logout');
+    $routes->get('/dashboard', 'Dashboard::index');
 
-// $routes->group('panel', ['filter' => 'adminauth'], static function ($routes) {
-//     $routes->get('/', 'Admin\DashboardController::index');
-//     $routes->get('list-user', 'Admin\UserController::index');
-//     $routes->get('berita', 'Admin\BeritaController::index');
-//     $routes->post('berita', 'Admin\BeritaController::store');
-//     $routes->get('berita/edit/(:segment)', 'Admin\BeritaController::edit/$1');
-//     $routes->post('berita/edit/(:segment)', 'Admin\BeritaController::update/$1');
-//     $routes->get('berita/delete/(:segment)', 'Admin\BeritaController::delete/$1');
-//     $routes->get('layanan/barang-bukti', 'Admin\LayananController::barangBukti');
-// });
+    // Register (later will be changed to /user *created by superadmin)
+    $routes->get('/register', 'Auth::register');
+    $routes->post('/register/store', 'Auth::registerStore');
 
+    $routes->get('/', 'DashboardController::index');
+    $routes->get('list-user', 'UserController::index');
 
-// Routes Layanan
-$routes->get('/layanan/barang-bukti', 'Main\LayananController::barangBukti', ['as' => 'layanan.barang_bukti']);
-$routes->post('/layanan/barang-bukti', 'Data\BarangBuktiController::storePengambilanBarangBukti');
-$routes->post('/layanan/barang-bukti/check', 'Data\BarangBuktiController::checkPengambilanBarangBukti');
-$routes->get('/layanan/kunjungan-tahanan', 'Main\LayananController::kunjunganTahanan', ['as' => 'layanan.kunjungan_tahanan']);
-$routes->post('/layanan/kunjungan-tahanan', 'Main\KunjunganTahananController::store');
-$routes->post('/layanan/kunjungan-tahanan/check', 'Main\KunjunganTahananController::check');
+    // Berita
+    $routes->get('berita', 'BeritaController::index');
+    $routes->post('berita', 'BeritaController::store');
+    $routes->get('berita/edit/(:segment)', 'BeritaController::edit/$1');
+    $routes->post('berita/edit/(:segment)', 'BeritaController::update/$1');
+    $routes->get('berita/delete/(:segment)', 'BeritaController::delete/$1');
 
-// Routes Login
-$routes->get('/login', 'Auth::login');
-$routes->post('/login/auth', 'Auth::loginAuth');
-$routes->get('/logout', 'Auth::logout');
-$routes->get('/dashboard', 'Dashboard::index'); // Tambahkan jika belum
+    // Layanan
+    $routes->get('layanan/barang-bukti', 'Layanan::barangBukti');
 
-// Routes Register
-$routes->get('/register', 'Auth::register');
-$routes->post('/register/store', 'Auth::registerStore');
+    // Jadwal Sidang
+    $routes->get('jadwal-sidang', 'JadwalSidangController::index');
+    $routes->get('jadwal-sidang/create', 'JadwalSidangController::create');
+    $routes->post('jadwal-sidang/store', 'JadwalSidangController::store');
+    $routes->get('jadwal-sidang/edit/(:num)', 'JadwalSidangController::edit/$1');
+    $routes->post('jadwal-sidang/update/(:num)', 'JadwalSidangController::update/$1');
+    $routes->get('jadwal-sidang/delete/(:num)', 'JadwalSidangController::delete/$1');
+    $routes->post('jadwal-sidang/update/(:num)', 'JadwalSidangController::update/$1');
 
-    // Routes Jadwal Sidang 
-    $routes->group('panel', static function ($routes) {
-        $routes->get('jadwal-sidang', 'Admin\JadwalSidangController::index');
-        $routes->get('jadwal-sidang/create', 'Admin\JadwalSidangController::create');
-        $routes->post('jadwal-sidang/store', 'Admin\JadwalSidangController::store');
-        $routes->get('jadwal-sidang/edit/(:num)', 'Admin\JadwalSidangController::edit/$1');
-        $routes->post('jadwal-sidang/update/(:num)', 'Admin\JadwalSidangController::update/$1');
-        $routes->get('jadwal-sidang/delete/(:num)', 'Admin\JadwalSidangController::delete/$1');
-        // ['filter' => 'adminOnly'],
-        $routes->post('panel/jadwal-sidang/update/(:num)', 'JadwalController::update/$1');
-
-    // Routes Buku Tamu
-        $routes->get('buku-tamu', 'Admin\BukuTamuController::index');
-        $routes->get('buku-tamu/create', 'Admin\BukuTamuController::create');
-        $routes->post('buku-tamu/store', 'Admin\BukuTamuController::store');
-        $routes->get('buku-tamu/edit/(:num)', 'Admin\BukuTamuController::edit/$1');
-        $routes->post('buku-tamu/update/(:num)', 'Admin\BukuTamuController::update/$1');
-        $routes->get('buku-tamu/delete/(:num)', 'Admin\BukuTamuController::delete/$1');
+    // Buku Tamu
+    $routes->get('buku-tamu', 'BukuTamuController::index');
+    $routes->get('buku-tamu/create', 'BukuTamuController::create');
+    $routes->post('buku-tamu/store', 'BukuTamuController::store');
+    $routes->get('buku-tamu/edit/(:num)', 'BukuTamuController::edit/$1');
+    $routes->post('buku-tamu/update/(:num)', 'BukuTamuController::update/$1');
+    $routes->get('buku-tamu/delete/(:num)', 'BukuTamuController::delete/$1');
 });
