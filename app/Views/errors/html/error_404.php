@@ -17,7 +17,6 @@
         }
         body {
             height: 100%;
-            background: #fafafa;
             font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
             color: #777;
             font-weight: 300;
@@ -32,11 +31,10 @@
         }
         .wrap {
             max-width: 1024px;
-            margin: 5rem auto;
+            margin: 0rem auto;
             padding: 2rem;
             background: #fff;
             text-align: center;
-            border: 1px solid #efefef;
             border-radius: 0.5rem;
             position: relative;
         }
@@ -45,7 +43,6 @@
             margin-top: 1.5rem;
         }
         code {
-            background: #fafafa;
             border: 1px solid #efefef;
             padding: 0.5rem 1rem;
             border-radius: 5px;
@@ -70,15 +67,17 @@
 </head>
 <body>
     <div class="wrap">
-        <h1>404</h1>
+        <img src="<?= base_url('assets') ?>/img/icon/404.png" alt="kasubagbin" class="avatar img-fluid">
 
-        <p>
+        <h2>
             <?php if (ENVIRONMENT !== 'production') : ?>
                 <?= nl2br(esc($message)) ?>
             <?php else : ?>
                 <?= lang('Errors.sorryCannotFind') ?>
             <?php endif; ?>
-        </p>
+        </h2>
+        <br>
+        <a href="<?= base_url("") ?>">Kembali ke halaman utama</a>
     </div>
 </body>
 </html>

@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Controllers\Guest;
 
 use App\Controllers\BaseController;
 use App\Models\BeritaModel;
 
-class GuestController extends BaseController
+class Beranda extends BaseController
 {
     protected $data;
     protected $beritaModel;
@@ -15,25 +15,12 @@ class GuestController extends BaseController
         $this->data = [
             "base" => "Beranda"
         ];
-
         $this->beritaModel = new BeritaModel();
     }
 
     public function index()
     {
-        $beritaModel = new BeritaModel();
-
-        $berita = $beritaModel->orderBy('created_at', 'desc')->limit(2)->findAll();
-
-        $this->data["berita"] = $berita;
-
+        $this->data["berita"] = $this->beritaModel->orderBy('created_at', 'desc')->limit(2)->findAll();
         return view('main/HomeView', $this->data);
-    }
-
-    public function profil()
-    {
-        $this->data = [
-            "base" => "Profile"
-        ];
     }
 }
