@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 16, 2025 at 08:34 AM
+-- Generation Time: May 27, 2025 at 09:22 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -43,8 +43,49 @@ CREATE TABLE `berita` (
 --
 
 INSERT INTO `berita` (`id`, `user_id`, `judul`, `isi`, `gambar`, `tanggal`, `views`, `created_at`) VALUES
-(1, 1, 'Penutupan Praktek Pengalaman Lapangan (PPL) Mahasiswa Fakultas Syari’ah dan Hukum Universitas Islam Negeri Walisongo Semarang di Kejaksaan Negeri Salatiga', 'Penutupan Praktek Pengalaman Lapangan (PPL) Mahasiswa Fakultas Syari’ah dan Hukum Universitas Islam Negeri Walisongo Semarang di Kejaksaan Negeri Salatiga telah dilaksanakan pada hari Jumat, 07 Februari 2025 di Aula Kantor Kejaksaan Negeri Salatiga oleh Kepala Kejaksaan Negeri Salatiga (Sukamto, S.H., M.H.) bersama dengan Kepala Sub Bagian Pembinaan pada Kejaksaan Negeri Salatiga (Ramlah Hasyim Parema, S.H.). Kegiatan penutupan ini meliputi serah terima sertifikat magang kepada peserta, serah terima sertifikat pengisi materi, penyerahan cinderamata dari UIN Walisongo Semarang kepada Kejaksaan Negeri Salatiga, serta kesan dan pesan.  @kejaksaan.ri @kejati.jateng #KejaksaanRI #JaksaAgungRI #KejatiJateng #KejariSalatiga #JaksaAgungRI #kejaksaanri #jaksaagung #jaksa #jaksaprofesional #jaksamenyapa #jaksasahabatmasyarakat #puspenkum #penkum #kejaksaantinggi #kejaksaannegeri #bergerakdanberkarya #adhyaksa #trapsilaadhyaksa #banggamelayanibangsa', '1743542046_89a1b0a9c06bb19fcff9.png', '2025-02-07', 0, '2025-02-24 12:10:33'),
+(1, 1, 'Penutupan Praktek Pengalaman Lapangan (PPL) Mahasiswa Fakultas Syari’ah dan Hukum Universitas Islam Negeri Walisongo Semarang di Kejaksaan Negeri Salatiga', 'Penutupan Praktek Pengalaman Lapangan (PPL) Mahasiswa Fakultas Syari’ah dan Hukum Universitas Islam Negeri Walisongo Semarang di Kejaksaan Negeri Salatiga telah dilaksanakan pada hari Jumat, 07 Februari 2025 di Aula Kantor Kejaksaan Negeri Salatiga oleh Kepala Kejaksaan Negeri Salatiga (Sukamto, S.H., M.H.) bersama dengan Kepala Sub Bagian Pembinaan pada Kejaksaan Negeri Salatiga (Ramlah Hasyim Parema, S.H.). Kegiatan penutupan ini meliputi serah terima sertifikat magang kepada peserta, serah terima sertifikat pengisi materi, penyerahan cinderamata dari UIN Walisongo Semarang kepada Kejaksaan Negeri Salatiga, serta kesan dan pesan.  @kejaksaan.ri @kejati.jateng #KejaksaanRI #JaksaAgungRI #KejatiJateng #KejariSalatiga #JaksaAgungRI #kejaksaanri #jaksaagung #jaksa #jaksaprofesional #jaksamenyapa #jaksasahabatmasyarakat #puspenkum #penkum #kejaksaantinggi #kejaksaannegeri #bergerakdanberkarya #adhyaksa #trapsilaadhyaksa #banggamelayanibangsa', '1743542046_89a1b0a9c06bb19fcff9.png', '2025-02-07', 1, '2025-02-24 12:10:33'),
 (2, 1, 'Hari Ketiga Pelatihan dan Launching Aplikasi Pengadaan Real Time Monitoring Village Management Funding', 'Hari Ketiga Pelatihan dan Launching Aplikasi Pengadaan Real Time Monitoring Village Management Funding Kejaksaan Republik Indonesia Tahun Anggaran 2024 yang dilaksanakan di Grand Candi Hotel Semarang pada hari Kamis, 06 Februari 2025 turut dihadiri oleh Kepala Seksi Intelijen Kejaksaan Negeri Salatiga (Erwin Rionaldy Koloway, S.H., M.H.) dengan agenda Launching Aplikasi Jaga Desa.  @kejaksaan.ri @kejati.jateng #KejaksaanRI #JaksaAgungRI #KejatiJateng #KejariSalatiga #JaksaAgungRI #kejaksaanri #jaksaagung #jaksa #jaksaprofesional #jaksamenyapa #jaksasahabatmasyarakat #puspenkum #penkum #kejaksaantinggi #kejaksaannegeri #bergerakdanberkarya #adhyaksa #trapsilaadhyaksa #banggamelayanibangsa', 'berita_08_02_2025_2326.jpg', '2025-02-06', 7, '2025-02-22 23:09:38');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `bidang`
+--
+
+CREATE TABLE `bidang` (
+  `id` int(11) NOT NULL,
+  `nama` varchar(100) NOT NULL,
+  `slug` varchar(20) NOT NULL,
+  `tugas` text NOT NULL,
+  `fungsi` text NOT NULL,
+  `nama_kepala` varchar(255) NOT NULL,
+  `struktural` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `buku_tamu`
+--
+
+CREATE TABLE `buku_tamu` (
+  `id` int(11) NOT NULL,
+  `nama_petugas` varchar(100) NOT NULL,
+  `tipe_pelayanan` varchar(100) NOT NULL,
+  `tujuan_tamu` varchar(255) NOT NULL,
+  `tipe_identitas` varchar(15) NOT NULL,
+  `nomor_identitas` varchar(100) NOT NULL,
+  `nama` varchar(100) NOT NULL,
+  `no_hp` varchar(25) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `plat_kendaraan` varchar(20) NOT NULL,
+  `jenis_kelamin` varchar(15) NOT NULL,
+  `tempat_lahir` varchar(100) NOT NULL,
+  `tanggal_lahir` date NOT NULL,
+  `alamat` text NOT NULL,
+  `foto` varchar(255) NOT NULL,
+  `created_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -100,7 +141,7 @@ CREATE TABLE `layanan_pengambilan_barang_bukti` (
 --
 
 INSERT INTO `layanan_pengambilan_barang_bukti` (`id`, `nama_pemohon`, `nama_terpidana`, `alamat`, `pekerjaan`, `nomor_telepon`, `tanda_pengenal`, `perkara`, `barang_bukti`, `surat_kuasa`, `bukti_kepemilikan`, `nomor_registrasi`, `status`, `created_at`) VALUES
-(2, '3m2e3e3', 'rizal', 'km232', 'ASN', '082322734378', '1739517933_8d9c31581f80454344dd.png', 'apa yya', 'motor', '1739517933_c5b081deab32d0d240a0.png', '', 'ZlRCytG', 'done', '2025-02-14 14:25:33'),
+(2, '3m2e3e3', 'rizal', 'km232', 'ASN', '082322734378', '1739517933_8d9c31581f80454344dd.png', 'apa yya', 'motor', '1739517933_c5b081deab32d0d240a0.png', '', 'ZlRCytG', '', '2025-02-14 14:25:33'),
 (3, '3m2e3e3', 'rizal', 'km232', 'ASN', '082322734378', '1739521304_1bfb38aeb1434d7d8919.png', 'apa yya', 'motor', '1739521304_6d063950d90f7a586804.png', '', 'x5bsA4l', 'on_process', '2025-02-14 15:21:45'),
 (4, 'Yudha', 'test', 'Salatiga', 'ASN', '082322734378', '1739625231_b8c31597c753f7e4cc91.png', 'maling', 'pesawat', '', '', '3YIGgaP', 'on_process', '2025-02-15 20:13:52'),
 (5, 'Yudha', 'test', 'Salatiga', 'ASN', '082322734378', '1739625335_2a8bd3ca75fb3865abeb.png', 'maling', 'pesawat', '', '', 'SMp6c5o', 'on_process', '2025-02-15 20:15:35'),
@@ -152,8 +193,12 @@ CREATE TABLE `roles` (
 
 INSERT INTO `roles` (`id`, `name`) VALUES
 (1, 'Super Admin'),
-(2, 'Admin Pidsus'),
-(3, 'Admin Intel');
+(2, 'Pidum'),
+(3, 'Pidsus'),
+(4, 'Intel'),
+(5, 'Datun'),
+(6, 'Pb3r'),
+(7, 'Bin');
 
 -- --------------------------------------------------------
 
@@ -186,6 +231,18 @@ INSERT INTO `users` (`id`, `username`, `name`, `password`, `role_id`, `created_a
 -- Indexes for table `berita`
 --
 ALTER TABLE `berita`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `bidang`
+--
+ALTER TABLE `bidang`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `buku_tamu`
+--
+ALTER TABLE `buku_tamu`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -229,6 +286,18 @@ ALTER TABLE `berita`
   MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT for table `bidang`
+--
+ALTER TABLE `bidang`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `buku_tamu`
+--
+ALTER TABLE `buku_tamu`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `jadwal_sidang`
 --
 ALTER TABLE `jadwal_sidang`
@@ -250,7 +319,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `users`

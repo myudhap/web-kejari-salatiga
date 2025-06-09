@@ -1,42 +1,76 @@
 <?= $this->extend('admin/layouts/index') ?>
-<?= $this->section('title') ?>
-Buku Tamu
-<?= $this->endSection() ?>
-<?= $this->section('content') ?>
+<?= $this->section('title') ?>Buku Tamu<?= $this->endSection() ?>
 
+<?= $this->section('content') ?>
 <div class="container mt-4">
     <h3>Daftar Buku Tamu</h3>
-    <a href="<?= base_url('panel/buku-tamu/create') ?>" class="btn btn-primary mb-3">Tambah Tamu</a>
 
     <?php if (session()->getFlashdata('success')): ?>
         <div class="alert alert-success"><?= session()->getFlashdata('success') ?></div>
     <?php endif ?>
 
+    <a href="<?= base_url('panel/buku-tamu/create') ?>" class="btn btn-primary mb-3">Tambah Tamu</a>
+
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th>Tanggal</th>
                 <th>Nama</th>
                 <th>Tipe Pelayanan</th>
-                <th>Nama Petugas</th>
+                <th>Petugas</th>
+                <th>Waktu</th>
                 <th>Aksi</th>
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($buku_tamu as $tamu): ?>
+            <?php foreach ($tamus as $t): ?>
                 <tr>
-                    <td><?= date('d-m-Y H:i', strtotime($tamu['created_at'])) ?></td>
-                    <td><?= esc($tamu['nama']) ?></td>
-                    <td><?= esc($tamu['tipe_pelayanan']) ?></td>
-                    <td><?= esc($tamu['nama_petugas']) ?></td>
+                    <td><?= esc($t['nama']) ?></td>
+                    <td><?= esc($t['tipe_pelayanan']) ?></td>
+                    <td><?= esc($t['nama_petugas']) ?></td>
+                    <td><?= (new \DateTime($t['created_at']))->format('d F Y, H:i') ?></td>
                     <td>
-                        <a href="<?= base_url('panel/buku-tamu/edit/' . $tamu['id']) ?>" class="btn btn-sm btn-warning">Edit</a>
-                        <a href="<?= base_url('panel/buku-tamu/delete/' . $tamu['id']) ?>" class="btn btn-sm btn-danger" onclick="return confirm('Yakin ingin menghapus?')">Hapus</a>
+                        <a href="<?= base_url('panel/buku-tamu/edit/' . $t['id']) ?>" class="btn btn-sm btn-warning">Edit</a>
+                        <a href="<?= base_url('panel/buku-tamu/delete/' . $t['id']) ?>" class="btn btn-sm btn-danger" onclick="return confirm('Hapus data ini?')">Hapus</a>
                     </td>
                 </tr>
-            <?php endforeach ?>
+
+                <!-- Modal Edit -->
+                <div class="modal fade" id="modalEdit<?= $t['id'] ?>" tabindex="-1">
+                    <div class="modal-dialog modal-lg">
+                        <form action="<?= base_url('panel/buku-tamu/update/' . $t['id']) ?>" method="post" enctype="multipart/form-data" class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Edit Tamu</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body">
+                                <?= view('admin/buku_tamu/form_fields', ['tamu' => $t]) ?>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-success">Simpan</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            <?php endforeach; ?>
         </tbody>
     </table>
 </div>
 
+<!-- Modal Create -->
+<div class="modal fade" id="modalCreate" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <form action="<?= base_url('panel/buku-tamu/store') ?>" method="post" enctype="multipart/form-data" class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Tambah Tamu</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <?= view('admin/buku_tamu/form_fields', ['tamu' => []]) ?>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-success">Simpan</button>
+            </div>
+        </form>
+    </div>
+</div>
 <?= $this->endSection() ?>
