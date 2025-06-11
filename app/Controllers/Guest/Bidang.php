@@ -33,7 +33,7 @@ class Bidang extends BaseController
         $bidang['fungsi'] = explode(';', $bidang['fungsi']);
         $bidang['struktural'] = explode(';', $bidang['struktural']);
         $bidang['kepala'] = 'Kepala Seksi';
-        if ($bidang['slug'] = 'bin') {
+        if ($bidang['slug'] == 'pembinaan') {
             $bidang['kepala'] = 'Kepala Sub Bagian';
         }
         $this->data['bidang'] = $bidang;

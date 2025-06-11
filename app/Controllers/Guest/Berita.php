@@ -20,14 +20,14 @@ class Berita extends BaseController
 
     public function index()
     {
-        $this->data["berita"] = $this->beritaModel->orderBy('created_at', 'desc')->limit(5)->findAll();
+        $this->data["berita"] = $this->beritaModel->orderBy('tanggal', 'desc')->limit(5)->findAll();
         return view('main/berita/beritaView', $this->data);
     }
 
     public function detail($seg = false)
     {
         $this->data["berita"] = $this->beritaModel->join('users', 'users.id = berita.user_id')->find($seg);
-        $this->data["beritaBaru"] = $this->beritaModel->orderBy('created_at', 'desc')->limit(5)->findAll();
+        $this->data["beritaBaru"] = $this->beritaModel->orderBy('tanggal', 'desc')->limit(5)->findAll();
 
         $this->data["berita"]["views"] = $this->data["berita"]["views"] + 1;
 
