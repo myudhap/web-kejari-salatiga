@@ -37,7 +37,7 @@
             <div class="alert alert-danger"><?= session()->getFlashdata('error') ?></div>
         <?php endif; ?>
 
-        <form action="<?= base_url('/login/auth') ?>" method="post">
+        <form action="<?= base_url('/panel/login/auth') ?>" method="post">
             <div class="form-group mb-3">
                 <input type="text" name="username" class="form-control" placeholder="Username" required>
             </div>

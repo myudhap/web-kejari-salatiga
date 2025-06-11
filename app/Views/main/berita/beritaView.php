@@ -51,7 +51,7 @@
                             if (strlen($content) > $max_chars) {
                                 $content = substr($content, 0, $max_chars) . '...';
                             }
-                            echo esc($content) ?>
+                            echo $content ?>
                         </p>
                         <a style="background-color: #05ac69;" href="/berita/<?= $item['id'] ?>"
                             class="btn text-white font-weight-semibold btn-px-4 btn-py-2 text-2 my-2">Selengkapnya</a>
@@ -77,16 +77,6 @@
                         </nav>
                     </div>
                 </div>
-                <!-- <div class="row gx-5">
-                    <div class="col-lg-8">
-                        <div class="border"></div>
-                        BERITA
-                    </div>
-                    <div class="col-lg-4">
-                        <strong>BERITA LAINNYA</strong>
-                        <div class="border"></div>
-                    </div>
-                </div> -->
             </div>
         </div>
     </section>

@@ -23,7 +23,6 @@ class BeritaController extends BaseController
     public function index()
     {
         $this->data['beritas'] = $this->model->orderBy("tanggal", "desc")->findAll();
-
         return view('admin/BeritaView', $this->data);
     }
 
@@ -34,7 +33,7 @@ class BeritaController extends BaseController
             "isi" => $this->request->getPost("isiBerita"),
             "tanggal" => $this->request->getPost("tanggalBerita"),
             "gambar" => "default.png",
-            "views" => 0,
+            "views" => 1,
             "user_id" => 1
         ];
 
@@ -43,7 +42,11 @@ class BeritaController extends BaseController
             session()->setFlashdata("error", $beritaImage['errors']);
             return redirect()->back();
         } else {
-            $data['gambar'] = $beritaImage['data'];
+            if ($beritaImage['data'] == null) {
+                $data['gambar'] = "default.png";
+            } else {
+                $data['gambar'] = $beritaImage['data'];
+            }
         }
 
         $rules = [
@@ -63,7 +66,6 @@ class BeritaController extends BaseController
         }
 
         $model = new BeritaModel();
-
         if ($model->insert($data)) {
             return redirect()->back();
         } else {

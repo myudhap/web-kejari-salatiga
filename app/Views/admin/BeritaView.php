@@ -28,7 +28,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Isi Berita</label>
-                                        <textarea class="form-control" name="isiBerita" id="isiBerita" rows="4" placeholder="Enter ..."></textarea>
+                                        <textarea class="form-control" name="isiBerita" id="summernote" rows="4" placeholder="Enter ..."></textarea>
                                     </div>
                                     <div class="form-group">
                                         <label>Tanggal Berita</label>
@@ -183,6 +183,11 @@
 <?= $this->endSection() ?>
 
 <?= $this->section("script") ?>
+    <script>
+        $(document).ready(function() {
+            $('#summernote').summernote();
+        });
+    </script>
     <script type="text/javascript">
         gambarBerita.onchange = e => {
             const [file] = gambarBerita.files

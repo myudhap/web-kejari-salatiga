@@ -105,6 +105,9 @@
     <script src="<?php echo base_url('assets/vendor/adminLTE') ?>/dist/js/adminlte.js"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="<?php echo base_url('assets/vendor/adminLTE') ?>/dist/js/pages/dashboard.js"></script>
+    <!-- include summernote css/js -->
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote.min.js"></script>
     <?= $this->renderSection("script") ?>
 </body>
 

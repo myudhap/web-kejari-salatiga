@@ -58,8 +58,6 @@
     <script src="<?php echo base_url('assets/vendor') ?>/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/570bda8e30.js" crossorigin="anonymous"></script>
-    <!-- Slick JS -->
-
     <?= $this->renderSection("script") ?>
 </body>
 

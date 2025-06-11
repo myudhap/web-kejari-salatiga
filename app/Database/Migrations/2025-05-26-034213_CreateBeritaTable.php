@@ -31,6 +31,9 @@ class CreateBeritaTable extends Migration
                 'type' 		 => 'VARCHAR',
                 'constraint' => 255,
             ],
+            'tanggal' => [
+                'type' 		 => 'DATE',
+            ],
             "created_at datetime default current_timestamp"
         ]);
         $this->forge->addKey('id', true);

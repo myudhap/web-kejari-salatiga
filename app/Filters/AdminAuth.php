@@ -14,7 +14,7 @@ class AdminAuth implements FilterInterface
 
         // Jika belum login atau bukan admin
         if (! $session->get('logged_in') || $session->get('role_id') != 1) {
-            return redirect()->to('/login')->with('error', 'Akses hanya untuk admin!');
+            return redirect()->to('/panel/login')->with('error', 'Akses hanya untuk admin!');
         }
     }
 

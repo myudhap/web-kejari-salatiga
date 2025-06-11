@@ -21,8 +21,5 @@ use Predis\Client;
  */
 class Services extends BaseService
 {
-    public static function validation()
-    {
-        return \Config\Services::validation();
-    }
+    
 }

@@ -25,6 +25,8 @@ class Auth extends BaseController
             $session->set([
                 'user_id' => $user['id'],
                 'username' => $user['username'],
+                'name' => $user['name'],
+                'role_id' => $user['role_id'],
                 'logged_in' => true
             ]);
             return redirect()->to('/panel');
@@ -37,7 +39,7 @@ class Auth extends BaseController
     public function logout()
     {
         session()->destroy();
-        return redirect()->to('/login');
+        return redirect()->to('/panel/login');
     }
 
     public function register()
