@@ -22,7 +22,17 @@ class BeritaController extends BaseController
 
     public function index()
     {
-        $this->data['beritas'] = $this->model->orderBy("tanggal", "desc")->findAll();
+        //pagination
+        $page = (int) ($this->request->getVar('page') ?? 1);
+        $limit = (int) ($this->request->getVar('limit') ?? 5);
+        $offset = ($page - 1) * $limit;
+
+        $this->data['beritas'] = $this->model->orderBy("tanggal", "desc")->findAll($limit, $offset);
+
+        $this->data['total'] = $this->model->countAll();
+        $this->data['page'] = $page;
+        $this->data['limit'] = $limit;
+
         return view('admin/BeritaView', $this->data);
     }
 
@@ -97,7 +107,11 @@ class BeritaController extends BaseController
             session()->setFlashdata("error", $beritaImage['errors']);
             return redirect()->back();
         } else {
-            $data['gambar'] = $beritaImage['data'];
+            if ($beritaImage['data'] == null) {
+                $data['gambar'] = "default.png";
+            } else {
+                $data['gambar'] = $beritaImage['data'];
+            }
         }
 
         $rules = [
@@ -110,13 +124,13 @@ class BeritaController extends BaseController
         ];
 
         $result = validate_input($data, $rules);
+
         if (!$result['success']) {
             session()->setFlashdata("error", "Harap Isi Data yang Dibutuhkan");
             return redirect()->back();
         }
 
         $model = new BeritaModel();
-
         if ($model->update($id, $data)) {
             return redirect()->back();
         } else {

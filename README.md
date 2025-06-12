@@ -31,3 +31,13 @@ Selamat datang di **Website Kejari Salatiga**, sebuah proyek web yang dirancang 
    sesuaikan nama db yang dibuat dengan .env
    lalu jalankan migrasi "php spark migration"
    jalankan aplikasi "php spark serve"
+
+## 🚀 Deploy CPanel
+
+1. Ubah "require FCPATH . '../app/Config/Paths.php';" pada public/index.php menjadi "require FCPATH . './app/Config/Paths.php';"
+2. Keluarkan semua yang ada pada public file keluar
+3. ZIP semua file & folder (kecuali .env)
+4. Hapus semua file pada cpanel (kecuali .env)
+5. Upload pada CPanel
+6. Extract file
+7. Lakukan setting DB (jika ada table atau column baru)

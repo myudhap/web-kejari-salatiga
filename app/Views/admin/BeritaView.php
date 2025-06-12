@@ -68,6 +68,11 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <?php if (empty($beritas)) : ?>
+                            <tr>
+                                <td class="text-center" colspan="6">Belum ada data Berita.</td>
+                            </tr>
+                            <?php else : ?>
                             <?php foreach($beritas as $key => $berita): ?>
                             <tr>
                                 <td><?= $key+1 ?>.</td>
@@ -111,11 +116,11 @@
                                                     </div>
                                                     <div class="form-group">
                                                         <label>Isi Berita</label>
-                                                        <textarea class="form-control" name="isiBerita" id="isiBerita" rows="4"><?= $berita['isi'] ?></textarea>
+                                                        <textarea class="form-control" name="isiBerita" id="summernoteedit" rows="4"><?= $berita['isi'] ?></textarea>
                                                     </div>
                                                     <div class="form-group">
                                                         <label>Tanggal Berita</label>
-                                                        <input type="date" name="tanggalBerita" id="tanggalBerita" class="form-control" value="<?= $berita['tanggal'] ?>">
+                                                        <input type="date" name="tanggalBerita" id="tanggalBerita" class="form-control" value="<?= date('Y-m-d', strtotime($berita['tanggal'])) ?>">
                                                     </div>
                                                     <div class="form-group">
                                                         <label>Gambar Berita <i class="text-gray">(max 2MB)</i></label>
@@ -164,16 +169,19 @@
                                 </td>
                             </tr>
                             <?php endforeach; ?>
+                            <?php endif; ?>
                         </tbody>
                     </table>
                 </div>
                 <div class="card-footer clearfix">
                     <ul class="pagination pagination-sm m-0 float-right">
-                        <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
+                        <?php for ($i = 1; $i <= ceil($total / $limit); $i++): ?>
+                            <li class="page-item">
+                                <a class="page-link" href="?page=<?= $i ?>&limit=<?= $limit ?>" <?= ($i == $page ? 'style="font-weight: bold;"' : '') ?>>
+                                    <?= $i ?>
+                                </a>
+                            </li>
+                        <?php endfor; ?>
                     </ul>
                 </div>
             </div>
@@ -186,6 +194,11 @@
     <script>
         $(document).ready(function() {
             $('#summernote').summernote();
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('#summernoteedit').summernote();
         });
     </script>
     <script type="text/javascript">

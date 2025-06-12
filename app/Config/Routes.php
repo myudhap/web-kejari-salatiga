@@ -60,6 +60,7 @@ $routes->group('panel', [
     $routes->post('berita', 'BeritaController::store');
     $routes->get('berita/edit/(:segment)', 'BeritaController::edit/$1');
     $routes->post('berita/edit/(:segment)', 'BeritaController::update/$1');
+    $routes->get('berita/delete/(:segment)', 'BeritaController::delete/$1');
 
     // Layanan
     $routes->get('layanan/barang-bukti', 'Layanan::barangBukti');

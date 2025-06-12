@@ -51,7 +51,7 @@
                 <div class="row mb-3">
                 </div>
                 <div class="deskripsi row gx-5">
-                    <div class="col-lg-6">
+                    <div class="<?php if(count($bidang['struktural']) > 0) { echo `col-lg-6`; } else { echo `col-lg-12`; } ?>">
                         <p><strong class="text-primary">Fungsi:</strong></p>
                         <ol style="font-size: 0.9rem;">
                             <?php foreach ($bidang['fungsi'] as $item): ?>
@@ -59,7 +59,7 @@
                             <?php endforeach; ?>
                         </ol>
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-6" <?php if(count($bidang['struktural']) == 0) echo "hidden" ?>>
                         <p><strong class="text-primary"><?= $bidang['nama'] ?> Terdiri Dari:</strong></p>
                         <ol style="font-size: 0.9rem;">
                             <?php foreach ($bidang['struktural'] as $item): ?>
