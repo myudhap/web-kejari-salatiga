@@ -5,7 +5,7 @@ namespace App\Controllers\Admin;
 use App\Controllers\BaseController;
 use App\Models\BukuTamuModel;
 
-class BukuTamuController extends BaseController
+class BukuTamu extends BaseController
 {
     /*************  ✨ Windsurf Command ⭐  *************/
     /**

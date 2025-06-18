@@ -5,7 +5,7 @@ namespace App\Controllers\Admin;
 use App\Controllers\BaseController;
 use App\Models\LayananPengambilanBarangBuktiModel;
 
-class LayananController extends BaseController
+class Layanan extends BaseController
 {
     protected $data;
 

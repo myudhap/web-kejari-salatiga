@@ -7,7 +7,7 @@ use App\Models\BeritaModel;
 
 use function Config\validate_input;
 
-class BeritaController extends BaseController
+class Berita extends BaseController
 {
     protected $data;
     protected $model;
@@ -33,7 +33,7 @@ class BeritaController extends BaseController
         $this->data['page'] = $page;
         $this->data['limit'] = $limit;
 
-        return view('admin/BeritaView', $this->data);
+        return view('admin/berita', $this->data);
     }
 
     public function store()
@@ -82,13 +82,6 @@ class BeritaController extends BaseController
             session()->setFlashdata("error", "Gagal untuk menambahkan data");
             return redirect()->back();
         }
-    }
-
-    public function edit($id)
-    {
-        $model = new BeritaModel();
-        $this->data['berita'] = $model->find($id);
-        return view('admin/BeritaEditView', $this->data);
     }
 
     public function update($id)

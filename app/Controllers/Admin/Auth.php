@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
 use App\Models\UserModel;
@@ -9,7 +9,7 @@ class Auth extends BaseController
 {
     public function login()
     {
-        return view('auth/login');
+        return view('admin/login');
     }
 
     public function loginAuth()
@@ -44,7 +44,7 @@ class Auth extends BaseController
 
     public function register()
     {
-        return view('auth/register');
+        return view('admin/register');
     }
 
     public function registerStore()
@@ -60,7 +60,7 @@ class Auth extends BaseController
 
         $model->insert($data);
 
-        return redirect()->to('/login')->with('success', 'Registrasi berhasil! Silakan login.');
+        return redirect()->to('/panel/login')->with('success', 'Registrasi berhasil! Silakan login.');
     }
 
     

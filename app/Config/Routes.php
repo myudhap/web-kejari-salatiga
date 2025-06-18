@@ -43,50 +43,56 @@ $routes->group('', ['namespace' => 'App\Controllers\Guest'], function($routes) {
 });
 
 // Admin Routes
-$routes->get('/panel/login', 'Auth::login');
-$routes->post('/panel/login/auth', 'Auth::loginAuth');
-$routes->get('/panel/logout', 'Auth::logout');
+$routes->group('panel', ['namespace' => 'App\Controllers\Admin'], function($routes) {
+    $routes->get('login', 'Auth::login');
+    $routes->post('login/auth', 'Auth::loginAuth');
+});
 
 $routes->group('panel', [
     'namespace' => 'App\Controllers\Admin',
     'filter' => 'auth'
 ], function($routes) {
+    $routes->get('logout', 'Auth::logout');
+
     $routes->get('dashboard', 'Dashboard::index');
+    $routes->get('', 'Dashboard::index');
 
-    $routes->get('/', 'DashboardController::index');
-    $routes->get('list-user', 'UserController::index');
+    $routes->get('list-user', 'User::index');
+    $routes->post('user', 'User::store');
+    $routes->post('user/edit/(:segment)', 'User::update/$1');
+    $routes->get('user/delete/(:segment)', 'User::delete/$1');
 
-    $routes->get('berita', 'BeritaController::index');
-    $routes->post('berita', 'BeritaController::store');
-    $routes->get('berita/edit/(:segment)', 'BeritaController::edit/$1');
-    $routes->post('berita/edit/(:segment)', 'BeritaController::update/$1');
-    $routes->get('berita/delete/(:segment)', 'BeritaController::delete/$1');
+    $routes->get('berita', 'Berita::index');
+    $routes->post('berita', 'Berita::store');
+    $routes->get('berita/edit/(:segment)', 'Berita::edit/$1');
+    $routes->post('berita/edit/(:segment)', 'Berita::update/$1');
+    $routes->get('berita/delete/(:segment)', 'Berita::delete/$1');
 
     // Layanan
     $routes->get('layanan/barang-bukti', 'Layanan::barangBukti');
-    // $routes->get('/layanan/barang-bukti', 'Main\LayananController::barangBukti', ['as' => 'layanan.barang_bukti']);
+    // $routes->get('/layanan/barang-bukti', 'Main\Layanan::barangBukti', ['as' => 'layanan.barang_bukti']);
     // $routes->post('/layanan/barang-bukti', 'Data\BarangBuktiController::storePengambilanBarangBukti');
     // $routes->post('/layanan/barang-bukti/check', 'Data\BarangBuktiController::checkPengambilanBarangBukti');
-    // $routes->get('/layanan/kunjungan-tahanan', 'Main\LayananController::kunjunganTahanan', ['as' => 'layanan.kunjungan_tahanan']);
+    // $routes->get('/layanan/kunjungan-tahanan', 'Main\Layanan::kunjunganTahanan', ['as' => 'layanan.kunjungan_tahanan']);
     // $routes->post('/layanan/kunjungan-tahanan', 'Main\KunjunganTahananController::store');
     // $routes->post('/layanan/kunjungan-tahanan/check', 'Main\KunjunganTahananController::check');
 
     // Jadwal Sidang
-    $routes->get('jadwal-sidang', 'JadwalSidangController::index');
-    $routes->get('jadwal-sidang/create', 'JadwalSidangController::create');
-    $routes->post('jadwal-sidang/store', 'JadwalSidangController::store');
-    $routes->get('jadwal-sidang/edit/(:num)', 'JadwalSidangController::edit/$1');
-    $routes->post('jadwal-sidang/update/(:num)', 'JadwalSidangController::update/$1');
-    $routes->get('jadwal-sidang/delete/(:num)', 'JadwalSidangController::delete/$1');
-    $routes->post('jadwal-sidang/update/(:num)', 'JadwalSidangController::update/$1');
+    $routes->get('jadwal-sidang', 'JadwalSidang::index');
+    $routes->get('jadwal-sidang/create', 'JadwalSidang::create');
+    $routes->post('jadwal-sidang/store', 'JadwalSidang::store');
+    $routes->get('jadwal-sidang/edit/(:num)', 'JadwalSidang::edit/$1');
+    $routes->post('jadwal-sidang/update/(:num)', 'JadwalSidang::update/$1');
+    $routes->get('jadwal-sidang/delete/(:num)', 'JadwalSidang::delete/$1');
+    $routes->post('jadwal-sidang/update/(:num)', 'JadwalSidang::update/$1');
 
     // Buku Tamu
-    $routes->get('buku-tamu', 'BukuTamuController::index');
-    $routes->get('buku-tamu/create', 'BukuTamuController::create');
-    $routes->post('buku-tamu/store', 'BukuTamuController::store');
-    $routes->get('buku-tamu/edit/(:num)', 'BukuTamuController::edit/$1');
-    $routes->post('buku-tamu/update/(:num)', 'BukuTamuController::update/$1');
-    $routes->get('buku-tamu/delete/(:num)', 'BukuTamuController::delete/$1');
+    $routes->get('buku-tamu', 'BukuTamu::index');
+    $routes->get('buku-tamu/create', 'BukuTamu::create');
+    $routes->post('buku-tamu/store', 'BukuTamu::store');
+    $routes->get('buku-tamu/edit/(:num)', 'BukuTamu::edit/$1');
+    $routes->post('buku-tamu/update/(:num)', 'BukuTamu::update/$1');
+    $routes->get('buku-tamu/delete/(:num)', 'BukuTamu::delete/$1');
 
     $routes->group('user', [
         'filter' => 'adminauth'

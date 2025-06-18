@@ -5,7 +5,7 @@ namespace App\Controllers\Admin;
 use App\Controllers\BaseController;
 use App\Models\BeritaModel;
 
-class DashboardController extends BaseController
+class Dashboard extends BaseController
 {
     protected $data;
 
@@ -23,6 +23,6 @@ class DashboardController extends BaseController
         $this->data['users'] = [1,2,3,4];
         $this->data['berita'] = $beritaModel->findAll();
 
-        return view('admin/DashboardView', $this->data);
+        return view('admin/dashboard', $this->data);
     }
 }

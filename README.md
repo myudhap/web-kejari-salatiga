@@ -41,3 +41,6 @@ Selamat datang di **Website Kejari Salatiga**, sebuah proyek web yang dirancang 
 5. Upload pada CPanel
 6. Extract file
 7. Lakukan setting DB (jika ada table atau column baru)
+
+DONE DEVELOP & TESTING (Admin Page):
+- CRUD User

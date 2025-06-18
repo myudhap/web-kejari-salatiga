@@ -11,7 +11,7 @@
                 <div class="carousel-caption">
                     <img src="<?php echo base_url('assets') ?>/img/logo_berakhlak.png" class="mb-2" alt="" width="200">
                     <h1 class="text-primary fw-bolder">Kejaksaan Negeri Salatiga</h1>
-                    <h2 class="text-black fw-bold">Website On Progress</h2>
+                    <h2 class="text-black fw-bold">ZONA INTEGRITAS</h2>
                 </div>
             </div>
         </div>

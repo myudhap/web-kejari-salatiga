@@ -5,7 +5,7 @@ namespace App\Controllers\Admin;
 use App\Controllers\BaseController;
 use App\Models\JadwalSidangModel;
 
-class JadwalSidangController extends BaseController
+class JadwalSidang extends BaseController
 {
     protected $jadwalModel;
 
