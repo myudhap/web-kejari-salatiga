@@ -93,78 +93,69 @@
                                     echo esc($content) 
                                     ?>
                                 </td>
-                                <td><img src="<?php echo base_url('assets/img/berita/' . $berita['gambar']) ?>" alt="" width="100%"></td>
+                                <td><img src="<?php echo base_url('assets/img/berita/' . $berita['gambar']) ?>" alt="" width="100px"></td>
                                 <td>
                                 <span>
-                                    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-update-berita">
+                                    <button 
+                                        type="button" 
+                                        class="edit-btn btn btn-warning" 
+                                        data-toggle="modal" 
+                                        data-target="#modal-update-berita"
+                                        data-id="<?= $berita['id'] ?>"
+                                        data-judul="<?= esc($berita['judul']) ?>"
+                                        data-isi="<?= esc($berita['isi']) ?>"
+                                        data-gambar="<?= esc($berita['gambar']) ?>"
+                                        data-tanggal="<?= esc($berita['tanggal']) ?>"
+                                    >
                                         Edit
                                     </button>
                                     <div class="modal fade" id="modal-update-berita" style="display: none;" aria-hidden="true">
-                                        <form action="/panel/berita/edit/<?= $berita['id'] ?>" method="POST" enctype="multipart/form-data">
-                                        <div class="modal-dialog modal-xl">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h4 class="modal-title">Edit Berita</h4>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">×</span>
-                                                    </button>
-                                                </div>
-                                                <div class="modal-body px-5">
-                                                    <div class="form-group">
-                                                        <label>Judul Berita</label>
-                                                        <textarea class="form-control" name="judulBerita" id="judulBerita" rows="2"><?= $berita['judul'] ?></textarea>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>Isi Berita</label>
-                                                        <textarea class="form-control" name="isiBerita" id="summernoteedit" rows="4"><?= $berita['isi'] ?></textarea>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>Tanggal Berita</label>
-                                                        <input type="date" name="tanggalBerita" id="tanggalBerita" class="form-control" value="<?= date('Y-m-d', strtotime($berita['tanggal'])) ?>">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>Gambar Berita <i class="text-gray">(max 2MB)</i></label>
-                                                        <div class="custom-file">
-                                                            <input type="file" name="updateGambarBerita" class="custom-file-input" id="updateGambarBerita">
-                                                            <label class="custom-file-label" for="updateGambarBerita">Choose file</label>
-                                                        </div>
-                                                    </div>
-                                                    <div id="updatePreviewBerita">
-                                                        <label>Preview Gambar</label><br>
-                                                        <img id="updatePreviewGambarBerita" src="<?php echo base_url('assets') ?>/img/berita/<?= $berita['gambar'] ?>" alt="your image" width="50%"/>
-                                                    </div>
-                                                </div>
-                                                <div class="modal-footer justify-content-end">
-                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
-                                                    <button type="submit" class="btn btn-success" >Simpan</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        </form>
-                                    </div>
-                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-delete-berita">
-                                        Hapus
-                                    </button>
-                                    <div class="modal fade" id="modal-delete-berita" style="display: none;" aria-hidden="true">
-                                        <form action="/panel/berita/delete/<?= $berita['id'] ?>" method="DELETE">
-                                            <div class="modal-dialog modal-m">
+                                        <form method="POST" id="editForm" enctype="multipart/form-data">
+                                            <div class="modal-dialog modal-xl">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
+                                                        <h4 class="modal-title">Edit Berita</h4>
                                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                             <span aria-hidden="true">×</span>
                                                         </button>
                                                     </div>
-                                                    <div class="modal-body">
-                                                        <h3>Konfirmasi Hapus Berita?</h3>
+                                                    <div class="modal-body px-5">
+                                                        <input type="hidden" name="id" id="beritaId">
+                                                        <div class="form-group">
+                                                            <label>Judul Berita</label>
+                                                            <textarea class="form-control" name="judulBerita" id="beritaJudul" rows="2"></textarea>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Isi Berita</label>
+                                                            <textarea class="form-control" name="isiBerita" id="beritaIsi" rows="4"></textarea>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Tanggal Berita</label>
+                                                            <input type="date" name="tanggalBerita" id="beritaTanggal" class="form-control">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Gambar Berita <i class="text-gray">(max 2MB)</i></label>
+                                                            <div class="custom-file">
+                                                                <input type="file" name="updateGambarBerita" class="custom-file-input" id="beritaGambar">
+                                                                <label class="custom-file-label" for="updateGambarBerita">Choose file</label>
+                                                            </div>
+                                                        </div>
+                                                        <div id="updatePreviewBerita">
+                                                            <label>Preview Gambar</label><br>
+                                                            <img id="beritaPreviewGambar" src="<?php echo base_url('assets') ?>/img/berita/<?= $berita['gambar'] ?>" alt="your image" width="50%"/>
+                                                        </div>
                                                     </div>
                                                     <div class="modal-footer justify-content-end">
                                                         <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
-                                                        <button type="submit" class="btn btn-success">Hapus</button>
+                                                        <button type="submit" class="btn btn-success" >Simpan</button>
                                                     </div>
                                                 </div>
                                             </div>
                                         </form>
                                     </div>
+                                    <a href="/panel/berita/delete/<?= $berita['id'] ?>" type="button" class="btn btn-danger" onclick="return confirm('Anda ingin menghapus berita ini?');">
+                                        Hapus
+                                    </a>
                                 </span>
                                 </td>
                             </tr>
@@ -196,11 +187,6 @@
             $('#summernote').summernote();
         });
     </script>
-    <script>
-        $(document).ready(function() {
-            $('#summernoteedit').summernote();
-        });
-    </script>
     <script type="text/javascript">
         gambarBerita.onchange = e => {
             const [file] = gambarBerita.files
@@ -219,5 +205,17 @@
                 updatePreviewGambarBerita.src = URL.createObjectURL(file)
             }
         }
+    </script>
+    <script>
+        document.querySelectorAll('.edit-btn').forEach(btn => {
+            btn.onclick = () => {
+                $('#beritaIsi').summernote('code', btn.dataset['isi']);
+                ['id', 'judul', 'previewGambar'].forEach(f => {
+                    document.getElementById('berita' + f.charAt(0).toUpperCase() + f.slice(1)).value = btn.dataset[f];
+                });
+
+                document.getElementById('editForm').action = `/panel/berita/edit/${btn.dataset.id}`;
+            }
+        })
     </script>
 <?= $this->endSection() ?>

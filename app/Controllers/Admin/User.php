@@ -66,11 +66,30 @@ class User extends BaseController
 
     public function update($id)
     {
-        $this->model->update($id, [
-            "name" => $this->request->getPost("name"),
-            "email" => $this->request->getPost("email"),
-            "role_id" => $this->request->getPost("role_id"),
-        ]);
+        $rules = [
+            "username" => "required|min_length[3]|is_unique[users.username, id, {$id}]",
+            "name" => 'required|min_length[3]',
+            "role_id" => 'required'
+        ];
+
+        $password = $this->request->getPost("password");
+        $confirm = $this->request->getPost("confirm_password");
+
+        if ($password || $confirm) {
+            $rules['password'] = 'required|min_length[6]';
+            $rules['confirm_password'] = 'required|matches[password]';
+        }
+
+        if (! $this->validate($rules)) {
+            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+        }
+
+        $data = $this->request->getPost(["name", "username", "role_id"]);
+        if ($password) {
+            $data['password'] = password_hash($password, PASSWORD_DEFAULT);
+        }
+
+        $this->model->update($id, $data);
 
         return redirect()->back();
     }
