@@ -80,7 +80,7 @@ class User extends BaseController
             $rules['confirm_password'] = 'required|matches[password]';
         }
 
-        if (! $this->validate($rules)) {
+        if (!$this->validate($rules)) {
             return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
         }
 
@@ -89,9 +89,11 @@ class User extends BaseController
             $data['password'] = password_hash($password, PASSWORD_DEFAULT);
         }
 
-        $this->model->update($id, $data);
+        if($this->model->update($id, $data)) {
+            return redirect()->back()->with('success', 'User berhasil diupdate.');
+        }
 
-        return redirect()->back();
+        return redirect()->back()->with("error", "Gagal update data user");
     }
     public function delete($id)
     {

@@ -105,7 +105,7 @@
                                         data-judul="<?= esc($berita['judul']) ?>"
                                         data-isi="<?= esc($berita['isi']) ?>"
                                         data-gambar="<?= esc($berita['gambar']) ?>"
-                                        data-tanggal="<?= esc($berita['tanggal']) ?>"
+                                        data-tanggal="<?= date('Y-m-d', strtotime($berita['tanggal'])) ?>"
                                     >
                                         Edit
                                     </button>
@@ -123,21 +123,21 @@
                                                         <input type="hidden" name="id" id="beritaId">
                                                         <div class="form-group">
                                                             <label>Judul Berita</label>
-                                                            <textarea class="form-control" name="judulBerita" id="beritaJudul" rows="2"></textarea>
+                                                            <textarea class="form-control" name="judul" id="beritaJudul" rows="2"></textarea>
                                                         </div>
                                                         <div class="form-group">
                                                             <label>Isi Berita</label>
-                                                            <textarea class="form-control" name="isiBerita" id="beritaIsi" rows="4"></textarea>
+                                                            <textarea class="form-control" name="isi" id="beritaIsi" rows="4"></textarea>
                                                         </div>
                                                         <div class="form-group">
                                                             <label>Tanggal Berita</label>
-                                                            <input type="date" name="tanggalBerita" id="beritaTanggal" class="form-control">
+                                                            <input type="date" name="tanggal" id="beritaTanggal" class="form-control">
                                                         </div>
                                                         <div class="form-group">
                                                             <label>Gambar Berita <i class="text-gray">(max 2MB)</i></label>
                                                             <div class="custom-file">
-                                                                <input type="file" name="updateGambarBerita" class="custom-file-input" id="beritaGambar">
-                                                                <label class="custom-file-label" for="updateGambarBerita">Choose file</label>
+                                                                <input type="file" name="gambar" class="custom-file-input" id="beritaGambar">
+                                                                <label class="custom-file-label" for="gambar"></label>
                                                             </div>
                                                         </div>
                                                         <div id="updatePreviewBerita">
@@ -210,7 +210,7 @@
         document.querySelectorAll('.edit-btn').forEach(btn => {
             btn.onclick = () => {
                 $('#beritaIsi').summernote('code', btn.dataset['isi']);
-                ['id', 'judul', 'previewGambar'].forEach(f => {
+                ['id', 'judul', 'tanggal', 'previewGambar'].forEach(f => {
                     document.getElementById('berita' + f.charAt(0).toUpperCase() + f.slice(1)).value = btn.dataset[f];
                 });
 

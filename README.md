@@ -44,3 +44,4 @@ Selamat datang di **Website Kejari Salatiga**, sebuah proyek web yang dirancang 
 
 DONE DEVELOP & TESTING (Admin Page):
 - CRUD User
+- CRUD Berita

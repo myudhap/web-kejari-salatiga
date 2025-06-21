@@ -86,50 +86,34 @@ class Berita extends BaseController
 
     public function update($id)
     {
-        $data = [
-            "judul" => $this->request->getPost("judulBerita"),
-            "isi" => $this->request->getPost("isiBerita"),
-            "tanggal" => $this->request->getPost("tanggalBerita"),
-            "gambar" => "default.png",
-            "views" => 0,
-            "user_id" => 1
-        ];
-
-        $beritaImage = upload_file($this->request->getFile('updateGambarBerita'), ['jpg', 'jpeg', 'png', 'pdf'], 2, "/berita");
-        if (!$beritaImage['success']) {
-            session()->setFlashdata("error", $beritaImage['errors']);
-            return redirect()->back();
-        } else {
-            if ($beritaImage['data'] == null) {
-                $data['gambar'] = "default.png";
-            } else {
-                $data['gambar'] = $beritaImage['data'];
-            }
-        }
-
+        // Validation rules
         $rules = [
-            "judul" => "required",
-            "isi" => "required",
+            "judul"   => "required",
+            "isi"     => "required",
             "tanggal" => "required",
-            "gambar" => "required",
-            "views" => "required",
-            "user_id" => "required"
         ];
 
-        $result = validate_input($data, $rules);
-
-        if (!$result['success']) {
-            session()->setFlashdata("error", "Harap Isi Data yang Dibutuhkan");
-            return redirect()->back();
+        if (!$this->validate($rules)) {
+            return redirect()->back()->withInput()->with("errors", $this->validator->getErrors());
         }
 
-        $model = new BeritaModel();
-        if ($model->update($id, $data)) {
-            return redirect()->back();
+        $data = $this->request->getPost(["judul", "isi", "tanggal"]);
+        $data["user_id"] = session()->get('user_id');
+
+        $file = $this->request->getFile('gambar');
+        $beritaImage = upload_file($file, ['jpg', 'jpeg', 'png', 'pdf'], 2, "/berita");
+        if (!$beritaImage['success']) {
+            return redirect()->back()->withInput()->with("errors", $beritaImage['errors']);
+        } else if ($beritaImage['data']) {
+            $data['gambar'] = $beritaImage['data'];
+        }
+
+        if ($this->model->update($id, $data)) {
+            session()->setFlashdata("success", "Berita berhasil diupdate");
         } else {
-            session()->setFlashdata("error", "Gagal untuk mengubah data");
-            return redirect()->back();
+            session()->setFlashdata("error", "Gagal mengupdate data");
         }
+        return redirect()->back();
     }
 
     public function delete($id)
