@@ -1,47 +1,56 @@
-# Website Kejaksaan Negeri Salatiga
 
-Selamat datang di **Website Kejari Salatiga**, sebuah proyek web yang dirancang untuk  ....
+<h1 align="center">Web Kejari Salatiga</h1>
 
-## 🎯 Fitur Utama
+<p align="center">
+  <em>Empowering Public Service Through Seamless Digital Engagement</em>
+</p>
 
-- 🌅 **Berita Terbaru**: Menampilkan berita terbaru mengenai Kejaksaan Negeri Salatiga.
-- 📝 **Profil Kejaksaan**: Menampilkan seluruh hal mengenai kejaksaan, dari sejarah, visi misi, logo, trikrama,dan struktur organisasi.
-- 📸 **Bidang**: Menampilkan bidang-bidang yang terdapat pada Kejari Salatiga beserta Tupoksinya.
-- 🎶 **Informasi**: Menampilkan jadwal sidang, informasi, tilang, dll.
-- 🎨 **Layanan**: Seluruh layanan yang tersedia di Kejari Salatiga, serta hasil survey kepuasan masyarakat.
+<p align="center">
+  <img src="https://img.shields.io/github/last-commit/myudhap/web-kejari-salatiga?style=flat-square" alt="Last Commit">
+  <img src="https://img.shields.io/github/languages/top/myudhap/web-kejari-salatiga?style=flat-square" alt="Top Language">
+  <img src="https://img.shields.io/github/languages/count/myudhap/web-kejari-salatiga?style=flat-square" alt="Languages Count">
+  <a href="https://github.com/myudhap/web-kejari-salatiga">
+    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=myudhap&repo=web-kejari-salatiga&layout=compact" alt="Languages Stats" />
+  </a>
+</p>
 
-## 🧑‍💻 Teknologi
+<p align="center">
+  <em>Build with the tools and techologies:</em>
+</p>
 
-- CodeIgniter 4
-- MySQL
-- Bootstrap 5
-- AdminLTE
-- CPanel
+<p align="center">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/markdown/markdown-original.svg" alt="Markdown" width="40" height="40"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/composer/composer-original.svg" alt="Composer" width="40" height="40"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" width="40" height="40"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP" width="40" height="40"/>
+</p>
 
-## 🚀 Instalasi Lokal
+<hr>
 
-1. **Clone repository:**
 
-   ```bash
-   https://github.com/myudhap/web-kejari-salatiga
-   cd web-kejari-salatiga
-   composer install
-   buat env file menjadi .env
-   buat database pada mysql local
-   sesuaikan nama db yang dibuat dengan .env
-   lalu jalankan migrasi "php spark migration"
-   jalankan aplikasi "php spark serve"
+### Table of Contents
 
-## 🚀 Deploy CPanel
+- [Overview](#-overview)
+- [Getting Started](#-getting-started)
+  - [Prerequisites](#-prerequisites)
+  - [Installation](#-installation)
+  - [Usage](#-usage)
+  - [Testing](#-testing)
 
-1. Ubah "require FCPATH . '../app/Config/Paths.php';" pada public/index.php menjadi "require FCPATH . './app/Config/Paths.php';"
-2. Keluarkan semua yang ada pada public file keluar
-3. ZIP semua file & folder (kecuali .env)
-4. Hapus semua file pada cpanel (kecuali .env)
-5. Upload pada CPanel
-6. Extract file
-7. Lakukan setting DB (jika ada table atau column baru)
+<hr>
 
-DONE DEVELOP & TESTING (Admin Page):
-- CRUD User
-- CRUD Berita
+### Overview
+
+<hr>
+
+### Getting Started
+
+#### Prerequisites
+
+#### Installation
+
+#### Usage
+
+#### Testing
+
+<hr>
