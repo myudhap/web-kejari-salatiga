@@ -29,7 +29,7 @@
                     <td><?= esc($t['nama_petugas']) ?></td>
                     <td><?= (new \DateTime($t['created_at']))->format('d F Y, H:i') ?></td>
                     <td>
-                        <a href="<?= base_url('panel/buku-tamu/edit/' . $t['id']) ?>" class="btn btn-sm btn-warning">Edit</a>
+                        <a href="<?= base_url('panel/buku-tamu/update/' . $t['id']) ?>" class="btn btn-sm btn-warning">Edit</a>
                         <a href="<?= base_url('panel/buku-tamu/delete/' . $t['id']) ?>" class="btn btn-sm btn-danger" onclick="return confirm('Hapus data ini?')">Hapus</a>
                     </td>
                 </tr>

@@ -58,7 +58,7 @@
                                 if (strlen($content) > $max_chars) {
                                     $content = substr($content, 0, $max_chars) . '...';
                                 }
-                                echo esc($content) ?>
+                                echo $content ?>
                             </p>
                             <a style="background-color: #00923f;" href="/berita/<?= $item['id'] ?>"
                                 class="btn text-white font-weight-semibold btn-px-4 btn-py-2 text-2 my-2">Selengkapnya</a>

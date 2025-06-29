@@ -21,7 +21,7 @@ $nav2->name = "User";
 $nav2->icon = "fa-user";
 $nav2->hasList = true;
 $nav2->list = array('List User', 'List Role', 'List Permission');
-$nav2->listHref = array('/panel/list-user', '/panel/list-role', '/panel/list-permission');
+$nav2->listHref = array('/panel/user', '/panel/role', '/panel/permission');
 $nav2->roles = [1];
 
 $nav3 = new Nav();

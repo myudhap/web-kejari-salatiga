@@ -214,7 +214,7 @@
                     document.getElementById('berita' + f.charAt(0).toUpperCase() + f.slice(1)).value = btn.dataset[f];
                 });
 
-                document.getElementById('editForm').action = `/panel/berita/edit/${btn.dataset.id}`;
+                document.getElementById('editForm').action = `/panel/berita/update/${btn.dataset.id}`;
             }
         })
     </script>

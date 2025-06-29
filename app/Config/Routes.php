@@ -57,16 +57,20 @@ $routes->group('panel', [
     $routes->get('dashboard', 'Dashboard::index');
     $routes->get('', 'Dashboard::index');
 
-    $routes->get('list-user', 'User::index');
+    $routes->get('user', 'User::index');
     $routes->post('user', 'User::store');
-    $routes->post('user/edit/(:segment)', 'User::update/$1');
+    $routes->post('user/update/(:segment)', 'User::update/$1');
     $routes->get('user/delete/(:segment)', 'User::delete/$1');
 
     $routes->get('berita', 'Berita::index');
     $routes->post('berita', 'Berita::store');
-    $routes->get('berita/edit/(:segment)', 'Berita::edit/$1');
-    $routes->post('berita/edit/(:segment)', 'Berita::update/$1');
+    $routes->post('berita/update/(:segment)', 'Berita::update/$1');
     $routes->get('berita/delete/(:segment)', 'Berita::delete/$1');
+
+    $routes->get('jadwal-sidang', 'JadwalSidang::index');
+    $routes->post('jadwal-sidang', 'JadwalSidang::store');
+    $routes->post('jadwal-sidang/update/(:num)', 'JadwalSidang::update/$1');
+    $routes->get('jadwal-sidang/delete/(:num)', 'JadwalSidang::delete/$1');
 
     // Layanan
     $routes->get('layanan/barang-bukti', 'Layanan::barangBukti');
@@ -77,20 +81,10 @@ $routes->group('panel', [
     // $routes->post('/layanan/kunjungan-tahanan', 'Main\KunjunganTahananController::store');
     // $routes->post('/layanan/kunjungan-tahanan/check', 'Main\KunjunganTahananController::check');
 
-    // Jadwal Sidang
-    $routes->get('jadwal-sidang', 'JadwalSidang::index');
-    $routes->get('jadwal-sidang/create', 'JadwalSidang::create');
-    $routes->post('jadwal-sidang/store', 'JadwalSidang::store');
-    $routes->get('jadwal-sidang/edit/(:num)', 'JadwalSidang::edit/$1');
-    $routes->post('jadwal-sidang/update/(:num)', 'JadwalSidang::update/$1');
-    $routes->get('jadwal-sidang/delete/(:num)', 'JadwalSidang::delete/$1');
-    $routes->post('jadwal-sidang/update/(:num)', 'JadwalSidang::update/$1');
-
     // Buku Tamu
     $routes->get('buku-tamu', 'BukuTamu::index');
     $routes->get('buku-tamu/create', 'BukuTamu::create');
     $routes->post('buku-tamu/store', 'BukuTamu::store');
-    $routes->get('buku-tamu/edit/(:num)', 'BukuTamu::edit/$1');
     $routes->post('buku-tamu/update/(:num)', 'BukuTamu::update/$1');
     $routes->get('buku-tamu/delete/(:num)', 'BukuTamu::delete/$1');
 

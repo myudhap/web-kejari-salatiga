@@ -233,7 +233,7 @@
             document.getElementById('userPassword').value = '';
             document.getElementById('userConfirm_password').value = '';
 
-            document.getElementById('editForm').action = `/panel/user/edit/${btn.dataset.id}`;
+            document.getElementById('editForm').action = `/panel/user/update/${btn.dataset.id}`;
         }
     })
 </script>
