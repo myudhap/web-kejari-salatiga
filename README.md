@@ -9,7 +9,10 @@
   <img src="https://img.shields.io/github/last-commit/myudhap/web-kejari-salatiga?style=flat-square" alt="Last Commit">
   <img src="https://img.shields.io/github/languages/top/myudhap/web-kejari-salatiga?style=flat-square" alt="Top Language">
   <img src="https://img.shields.io/github/languages/count/myudhap/web-kejari-salatiga?style=flat-square" alt="Languages Count">
-  <a href="https://github.com/myudhap/web-kejari-salatiga">
+</p>
+
+<p align="center">
+   <a href="https://github.com/myudhap/web-kejari-salatiga">
     <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=myudhap&repo=web-kejari-salatiga&layout=compact" alt="Languages Stats" />
   </a>
 </p>
