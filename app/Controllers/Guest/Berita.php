@@ -35,12 +35,12 @@ class Berita extends BaseController
 
     public function detail($seg = false)
     {
-        $this->data["berita"] = $this->beritaModel->join('users', 'users.id = berita.user_id')->find($seg);
-        $this->data["beritaBaru"] = $this->beritaModel->orderBy('tanggal', 'desc')->limit(5)->findAll();
+        $this->data["berita"] = $this->model->join('users', 'users.id = berita.user_id')->find($seg);
+        $this->data["beritaBaru"] = $this->model->orderBy('tanggal', 'desc')->limit(5)->findAll();
 
         $this->data["berita"]["views"] = $this->data["berita"]["views"] + 1;
 
-        $this->beritaModel->where('id', $seg)->set(['views' => $this->data["berita"]["views"]])->update();
+        $this->model->where('id', $seg)->set(['views' => $this->data["berita"]["views"]])->update();
 
         return view('guest/berita/detail', $this->data);
     }

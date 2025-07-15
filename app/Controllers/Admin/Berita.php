@@ -75,8 +75,7 @@ class Berita extends BaseController
             return redirect()->back();
         }
 
-        $model = new BeritaModel();
-        if ($model->insert($data)) {
+        if ($this->model->insert($data)) {
             return redirect()->back();
         } else {
             session()->setFlashdata("error", "Gagal untuk menambahkan data");
@@ -117,10 +116,9 @@ class Berita extends BaseController
 
     public function delete($id)
     {
-        $model = new BeritaModel();
-        $berita = $model->find($id);
+        $berita = $this->model->find($id);
         if ($berita) {
-            $model->delete($id);
+            $this->model->delete($id);
             session()->setFlashdata("success", "Berita berhasil dihapus");
         } else {
             session()->setFlashdata("error", "Berita tidak ditemukan");
