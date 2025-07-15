@@ -15,17 +15,13 @@ class CreateBukuTamuTable extends Migration
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
+            'layanan_id' => [
+                'type'           => 'INT',
+                'constraint'     => 5,
+            ],
             'nama_petugas' => [
                 'type' 		 => 'VARCHAR',
                 'constraint' => 100,
-            ],
-            'tipe_pelayanan' => [
-                'type' 		 => 'VARCHAR',
-                'constraint' => 100,
-            ],
-            'tujuan_tamu' => [
-                'type' 		 => 'VARCHAR',
-                'constraint' => 255,
             ],
             'tipe_identitas' => [
                 'type' 		 => 'VARCHAR',
@@ -42,14 +38,12 @@ class CreateBukuTamuTable extends Migration
             'no_hp' => [
                 'type' 		 => 'VARCHAR',
                 'constraint' => 25,
-            ],
-            'email' => [
-                'type' 		 => 'VARCHAR',
-                'constraint' => 100,
+                'null'      => true,
             ],
             'plat_kendaraan' => [
                 'type' 		 => 'VARCHAR',
                 'constraint' => 20,
+                'null'      => true,
             ],
             'jenis_kelamin' => [
                 'type' 		 => 'VARCHAR',
@@ -58,16 +52,25 @@ class CreateBukuTamuTable extends Migration
             'tempat_lahir' => [
                 'type' 		 => 'VARCHAR',
                 'constraint' => 100,
+                'null'      => true,
             ],
             'tanggal_lahir' => [
-                'type' 		 => 'DATE'
+                'type' 		 => 'DATE',
+                'null'      => true,
             ],
             'alamat' => [
-                'type' 		 => 'TEXT'
+                'type' 		 => 'TEXT',
+                'null'      => true,
             ],
-            'foto' => [
+            'foto_diri' => [
                 'type' 		 => 'VARCHAR',
                 'constraint' => 255,
+                'null'      => true,
+            ],
+            'foto_identitas' => [
+                'type' 		 => 'VARCHAR',
+                'constraint' => 255,
+                'null'      => true,
             ],
             "created_at datetime default current_timestamp"
         ]);

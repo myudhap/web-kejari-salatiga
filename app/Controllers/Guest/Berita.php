@@ -8,20 +8,29 @@ use App\Models\BeritaModel;
 class Berita extends BaseController
 {
     protected $data;
-    protected $beritaModel;
+    protected $model;
 
     public function __construct()
     {
         $this->data = [
             "base" => "Berita"
         ];
-        $this->beritaModel = new BeritaModel();
+        $this->model = new BeritaModel();
     }
 
     public function index()
     {
-        $this->data["berita"] = $this->beritaModel->orderBy('tanggal', 'desc')->limit(5)->findAll();
-        return view('main/berita/beritaView', $this->data);
+        $page = (int) ($this->request->getVar('page') ?? 1);
+        $limit = (int) ($this->request->getVar('limit') ?? 5);
+        $offset = ($page - 1) * $limit;
+
+        $this->data["berita"] = $this->model->orderBy('tanggal', 'desc')->findAll($limit, $offset);
+
+        $this->data['total'] = $this->model->countAll();
+        $this->data['page'] = $page;
+        $this->data['limit'] = $limit;
+
+        return view('guest/berita/index', $this->data);
     }
 
     public function detail($seg = false)
@@ -33,6 +42,6 @@ class Berita extends BaseController
 
         $this->beritaModel->where('id', $seg)->set(['views' => $this->data["berita"]["views"]])->update();
 
-        return view('main/berita/beritaDetailView', $this->data);
+        return view('guest/berita/detail', $this->data);
     }
 }

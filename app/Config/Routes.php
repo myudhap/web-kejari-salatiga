@@ -83,10 +83,16 @@ $routes->group('panel', [
 
     // Buku Tamu
     $routes->get('buku-tamu', 'BukuTamu::index');
-    $routes->get('buku-tamu/create', 'BukuTamu::create');
-    $routes->post('buku-tamu/store', 'BukuTamu::store');
+    $routes->post('buku-tamu', 'BukuTamu::store');
     $routes->post('buku-tamu/update/(:num)', 'BukuTamu::update/$1');
     $routes->get('buku-tamu/delete/(:num)', 'BukuTamu::delete/$1');
+
+    // Jaksa
+    $routes->get('jaksa', 'Jaksa::index');
+    $routes->post('jaksa', 'Jaksa::store');
+    $routes->post('jaksa/update/(:num)', 'Jaksa::update/$1');
+    $routes->post('jaksa/toggle-status/(:num)', 'Jaksa::toggleStatus/$1');
+    $routes->get('jaksa/delete/(:num)', 'Jaksa::delete/$1');
 
     $routes->group('user', [
         'filter' => 'adminauth'

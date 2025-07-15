@@ -27,7 +27,7 @@ class GuestController extends BaseController
 
         $this->data["berita"] = $berita;
 
-        return view('main/HomeView', $this->data);
+        return view('guest/home', $this->data);
     }
 
     public function profil()

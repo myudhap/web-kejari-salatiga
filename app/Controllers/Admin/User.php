@@ -61,7 +61,7 @@ class User extends BaseController
             return redirect()->back()->with('success', 'User berhasil ditambahkan.');
         }
 
-        return redirect()->back()->with("error", "Gagal menambahkan data user");
+        return redirect()->back()->with("errors", "Gagal menambahkan data user");
     }
 
     public function update($id)

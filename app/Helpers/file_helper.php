@@ -18,7 +18,7 @@ if (!function_exists('upload_file')) {
         }
 
         $newName = $file->getRandomName();
-        $file->move(ROOTPATH . 'public/assets/img/' . $folder, $newName);
+        $file->move(ROOTPATH . 'assets/img/' . $folder, $newName);
 
         return ['success' => true, 'data' => $newName];
     }

@@ -109,11 +109,10 @@ class Berita extends BaseController
         }
 
         if ($this->model->update($id, $data)) {
-            session()->setFlashdata("success", "Berita berhasil diupdate");
-        } else {
-            session()->setFlashdata("error", "Gagal mengupdate data");
+            return redirect()->back()->with("success", "Berita berhasil diupdate");
         }
-        return redirect()->back();
+
+        return redirect()->back()->with("errors", "Gagal memperbarui berita");
     }
 
     public function delete($id)

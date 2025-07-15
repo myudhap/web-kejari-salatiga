@@ -52,6 +52,13 @@ $nav6->hasList = false;
 $nav6->href = '/panel/buku-tamu';
 $nav6->roles = [1, 8];
 
+$nav7= new Nav();
+$nav7->name = "Jaksa";
+$nav7->icon = "fa-gavel";
+$nav7->hasList = false;
+$nav7->href = '/panel/jaksa';
+$nav7->roles = [1];
+
 $navList = array($nav1, $nav2, $nav3, $nav4, $nav5, $nav6);
 $session = session();
 $role_id = $session->get('role_id');

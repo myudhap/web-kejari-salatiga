@@ -21,6 +21,6 @@ class Beranda extends BaseController
     public function index()
     {
         $this->data["berita"] = $this->beritaModel->orderBy('tanggal', 'desc')->limit(2)->findAll();
-        return view('main/HomeView', $this->data);
+        return view('guest/home', $this->data);
     }
 }

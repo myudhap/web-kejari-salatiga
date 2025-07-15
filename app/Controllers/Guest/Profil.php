@@ -17,26 +17,26 @@ class Profil extends BaseController
 
     public function sejarah()
     {
-        return view('guest/profil/Sejarah', $this->data);
+        return view('guest/profil/sejarah', $this->data);
     }
 
     public function visiMisi()
     {
-        return view('guest/profil/VisiMisi', $this->data);
+        return view('guest/profil/visi_misi', $this->data);
     }
 
     public function logo()
     {
-        return view('guest/profil/Logo', $this->data);
+        return view('guest/profil/logo', $this->data);
     }
 
     public function triKrama()
     {
-        return view('guest/profil/TriKrama', $this->data);
+        return view('guest/profil/tri_krama', $this->data);
     }
 
     public function strukturOrganisasi()
     {
-        return view('guest/profil/Struktur', $this->data);
+        return view('guest/profil/struktur', $this->data);
     }
 }

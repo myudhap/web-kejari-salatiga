@@ -59,20 +59,17 @@
                 </div>
                 <?php endforeach; ?>
                 <div class="my-5">
-                    <h4 class="fw-bold float-start">Total Berita: <?php echo esc(count($berita)) ?></h4>
+                    <h4 class="fw-bold float-start">Total Berita: <?= $total ?></h4>
                     <div class="pagination float-end">
                         <nav>
                             <ul class="pagination">
-                                <li class="page-item disabled" aria-disabled="true" aria-label="« Previous">
-                                    <span class="page-link" aria-hidden="true">‹</span>
-                                </li>
-                                <li class="page-item active" aria-current="page"><span class="page-link">1</span></li>
-                                <li class="page-item"><a class="page-link" href="https://www.kejaksaan.go.id/conference/news?page=2">2</a></li>
-                                <li class="page-item disabled" aria-disabled="true"><span class="page-link">...</span></li>
-                                <li class="page-item"><a class="page-link" href="https://www.kejaksaan.go.id/conference/news?page=52">52</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="https://www.kejaksaan.go.id/conference/news?page=2" rel="next" aria-label="Next »">›</a>
-                                </li>
+                                <?php for ($i = 1; $i <= ceil($total / $limit); $i++): ?>
+                                    <li class="page-item">
+                                        <a class="page-link" href="?page=<?= $i ?>&limit=<?= $limit ?>" <?= ($i == $page ? 'style="font-weight: bold;"' : '') ?>>
+                                            <?= $i ?>
+                                        </a>
+                                    </li>
+                                <?php endfor; ?>
                             </ul>
                         </nav>
                     </div>

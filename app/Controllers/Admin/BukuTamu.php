@@ -4,63 +4,90 @@ namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
 use App\Models\BukuTamuModel;
+use App\Models\LayananModel;
 
 class BukuTamu extends BaseController
 {
-    /*************  ✨ Windsurf Command ⭐  *************/
-    /**
-     * Menampilkan halaman index buku tamu
-     *
-     * @return view
-     */
-    /*******  5482b1e7-201f-4428-b610-b69ba54efd70  *******/
+    protected $data;
+    protected $model;
+    protected $layananModel;
+
+    public function __construct()
+    {
+        $this->data = [
+            "title" => "Buku Tamu"
+        ];
+        $this->model = new BukuTamuModel();
+        $this->layananModel = new LayananModel();
+    }
+
     public function index()
     {
-        $model = new BukuTamuModel();
-        $data['tamus'] = $model->orderBy('created_at', 'DESC')->findAll();
-        $data['title'] = 'Buku Tamu'; // ✅ Tambahkan ini
-        return view('admin/buku_tamu/index', $data);
+        $page = (int) ($this->request->getVar('page') ?? 1);
+        $limit = (int) ($this->request->getVar('limit') ?? 5);
+        $offset = ($page - 1) * $limit;
+
+        $this->data['tamus'] = $this->model->orderBy("created_at", "desc")->findAll($limit, $offset);
+        $this->data['layanans'] = $this->layananModel->find();
+
+        $this->data['total'] = $this->model->countAll();
+        $this->data['page'] = $page;
+        $this->data['limit'] = $limit;
+
+        return view('admin/buku_tamu', $this->data);
     }
 
     public function store()
     {
-        $model = new \App\Models\BukuTamuModel();
+        $rules = [
+            'tanggal'          => 'required',
+            'nama_petugas'     => 'required',
+            'tipe_pelayanan'   => 'required',
+            'tipe_identitas'   => 'required',
+            'nomor_identitas'  => 'required',
+            'nama'             => 'required',
+            'jenis_kelamin'    => 'required',
+        ];
 
-        $file = $this->request->getFile('foto');
-        $filename = '';
-
-        if ($file && $file->isValid() && !$file->hasMoved()) {
-            $filename = $file->getRandomName();
-            $file->move('uploads/foto/', $filename);
+        if (!$this->validate($rules)) {
+            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
         }
 
         $data = [
+            'tanggal'          => $this->request->getPost('tanggal'),
             'nama_petugas'     => $this->request->getPost('nama_petugas'),
-            'tipe_pelayanan'   => $this->request->getPost('tipe_pelayanan'),
-            'tujuan_tamu'      => $this->request->getPost('tujuan_tamu'),
-            'data_pribadi'     => $this->request->getPost('data_pribadi'), // ✅ penting
+            'layanan_id'       => $this->request->getPost('tipe_pelayanan'),
+            'nama'             => $this->request->getPost('nama'),
             'tipe_identitas'   => $this->request->getPost('tipe_identitas'),
             'nomor_identitas'  => $this->request->getPost('nomor_identitas'),
-            'nama'             => $this->request->getPost('nama'),
             'no_hp'            => $this->request->getPost('no_hp'),
-            'email'            => $this->request->getPost('email'),
-            'plat_kendaraan'   => $this->request->getPost('plat_kendaraan'),
             'jenis_kelamin'    => $this->request->getPost('jenis_kelamin'),
             'tempat_lahir'     => $this->request->getPost('tempat_lahir'),
             'tanggal_lahir'    => $this->request->getPost('tanggal_lahir'),
+            'plat_kendaraan'   => $this->request->getPost('plat'),
             'alamat'           => $this->request->getPost('alamat'),
-            'foto'             => $filename
+            'foto_identitas'   => "",
+            'foto_diri'        => ""
         ];
 
-        // Debug: tampilkan data jika insert gagal
-        if (!$model->insert($data)) {
-            dd([
-                'data' => $data,
-                'errors' => $model->errors(),
-            ]);
+        $fileFotoDiri = $this->request->getFile('foto_diri');
+        $fileFotoIdentitas = $this->request->getFile('foto_identitas');
+        $fotoDiri = upload_file($fileFotoDiri, ['jpg', 'jpeg', 'png', 'pdf'], 2, "/tamu");
+        $fotoIdentitas = upload_file($fileFotoIdentitas, ['jpg', 'jpeg', 'png', 'pdf'], 2, "/tamu");
+
+        if ($fotoDiri['success']) {
+            $data['foto_diri'] = $fotoDiri['data'];
         }
 
-        return redirect()->to(base_url('panel/buku-tamu'))->with('success', 'Data tamu berhasil ditambahkan.');
+        if ($fotoIdentitas['success']) {
+            $data['foto_identitas'] = $fotoIdentitas['data'];
+        }
+
+        if ($this->model->insert($data)) {
+            return redirect()->back()->with('success', 'Data tamu berhasil ditambahkan.');
+        }
+        
+        return redirect()->back()->withInput()->with('errors', $this->model->errors());
     }
 
 

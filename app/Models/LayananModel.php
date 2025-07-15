@@ -4,29 +4,17 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class BukuTamuModel extends Model
+class LayananModel extends Model
 {
-    protected $table            = 'buku_tamu';
+    protected $table            = 'layanan';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
     protected $allowedFields    = [
-        'layanan_id',
-        'nama_petugas',
         'nama',
-        'tipe_identitas',
-        'nomor_identitas',
-        'jenis_kelamin',
-        'alamat',
-        'no_hp',
-        'foto_diri',
-        'foto_identitas',
-        'tanggal_lahir',
-        'tempat_lahir',
-        'plat_kendaraan',
-        'created_at',
+        'created_at'
     ];
 
     protected bool $allowEmptyInserts = false;

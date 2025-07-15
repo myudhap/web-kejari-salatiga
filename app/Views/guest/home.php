@@ -67,7 +67,7 @@
                     <br><br>
                 <?php endforeach; ?>
                 <div class="text-center">
-                    <a style="background-color: #00923f; width:30%; border-radius:2rem;" href="#"
+                    <a style="background-color: #00923f; width:30%; border-radius:2rem;" href="/berita"
                         class="btn text-white fw-bold btn-px-4 py-3 text-2 my-2 btn-outline-light">Lihat Berita Lainnya</a>
                 </div>
             </div>
